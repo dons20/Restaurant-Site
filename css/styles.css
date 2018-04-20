@@ -1,9 +1,10 @@
-html, body {
+html {
     height: 100%;
-}
+  }
 body {
     align-items: center;
     font-family: 'Varela Round', sans-serif;
+    min-height: 100%;
     padding-top: 54px;
   }
   
@@ -11,6 +12,14 @@ body {
     body {
         padding-top: 56px;
     }
+}
+
+#main-page {
+    min-height: 70vh;
+    min-height: -webkit-calc(100vh - 120px);
+    min-height: -moz-calc(100vh - 120px);
+    min-height: calc(100vh - 120px);
+    overflow: auto;
 }
   
 .business-header {
