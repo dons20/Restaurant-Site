@@ -35,10 +35,16 @@
               <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item">
-                <a id="log" href="#loginForm" class="nav-link" data-toggle="modal">Login</a>
+                <a id="login" href="#loginForm" class="nav-link" data-toggle="modal">Login</a>
             </li>
             <li class="nav-item">
                 <a id="reg" href="#registrationForm" class="nav-link" data-toggle="modal">Register</a>
+            </li>
+            <li class="nav-item" style="display: none;">
+                <a id="uname" href="javascript:void(0)" class="nav-link" data-toggle="modal">Username</a>
+            </li>
+            <li class="nav-item" style="display: none;">
+                <a id="logout" href="javascript:void(0)" class="nav-link" data-toggle="modal">Logout</a>
             </li>
           </ul>
         </div>
@@ -90,10 +96,10 @@
                 <div class="modal-body">
                     <form method="post">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="username" placeholder="Username" required="required">		
+                            <input type="text" class="form-control" name="username" placeholder="Username" required pattern="\S.*\S">		
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password" required="required">	
+                            <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="on" required pattern="\S.*\S">	
                         </div>        
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
@@ -101,8 +107,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <a href="#">Forgot Password?</a>
-                    <a href="#registrationForm" data-dismiss="modal" data-toggle="modal">Don't have an account?</a>
+                    <a href="javascript:void(0)">Forgot Password?</a>
+                    <a href="javascript:void(0)" onclick="$('#loginForm').one('hidden.bs.modal', function() { $('#registrationForm').modal('show'); }).modal('hide');">Don't have an account?</a>
                 </div>
             </div>
         </div>
@@ -126,11 +132,11 @@
                             <label>Username</label>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password" required>
+                            <input type="password" class="form-control" name="password" autocomplete="on" required>
                             <label>Password</label>	
                         </div>      
                         <div class="form-group">
-                            <input type="password" class="form-control" name="confirm_password" required>	
+                            <input type="password" class="form-control" name="confirm_password" autocomplete="on" required>	
                             <label>Confirm Password</label>
                         </div>
                         <div class="form-group">
@@ -147,7 +153,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <p>Already have an account? <a href="#loginForm" data-dismiss="modal" data-toggle="modal">Login here</a>.</p>
+                    <p>Already have an account? <a href="javascript:void(0)" onclick="$('#registrationForm').one('hidden.bs.modal', function() { $('#loginForm').modal('show'); }).modal('hide');">Login here</a>.</p>
                 </div>
             </div>
         </div>
