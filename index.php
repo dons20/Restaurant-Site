@@ -44,7 +44,7 @@
                 <a id="uname" href="javascript:void(0)" class="nav-link" data-toggle="modal">Username</a>
             </li>
             <li class="nav-item" style="display: none;">
-                <a id="logout" href="javascript:void(0)" class="nav-link" data-toggle="modal">Logout</a>
+                <a id="logout" href="/php/logout.php" class="nav-link">Logout</a>
             </li>
           </ul>
         </div>
@@ -96,10 +96,12 @@
                 <div class="modal-body">
                     <form method="post">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="username" placeholder="Username" required pattern="\S.*\S">		
+                            <input type="text" class="form-control mb-x" name="username" required pattern="\S.*\S">	
+                            <label>Username</label>	
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password" autocomplete="on" required pattern="\S.*\S">	
+                            <input type="password" class="form-control" name="password" autocomplete="on" required pattern="\S.*\S">	
+                            <label>Password</label>
                         </div>        
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
@@ -127,20 +129,20 @@
                 <div class="modal-body">
                     <form method="post">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="username" required>		
+                            <input type="text" class="form-control mb-x" name="username" required>		
                             <!-- <span class="help-block"></span> -->
                             <label>Username</label>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password" autocomplete="on" required>
+                            <input type="password" class="form-control mb-x" name="password" autocomplete="on" required>
                             <label>Password</label>	
                         </div>      
                         <div class="form-group">
-                            <input type="password" class="form-control" name="confirm_password" autocomplete="on" required>	
+                            <input type="password" class="form-control mb-x" name="confirm_password" autocomplete="on" required>	
                             <label>Confirm Password</label>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="first_name" required>		
+                            <input type="text" class="form-control mb-x" name="first_name" required>		
                             <label>First Name</label>
                         </div>      
                         <div class="form-group">

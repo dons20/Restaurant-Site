@@ -1,5 +1,7 @@
-var $rform =  $('#registrationForm form');
-var $lform =  $('#loginForm form');
+var $rform =  $('#registrationForm form'),
+    $lform =  $('#loginForm form'),
+    $logout = $('#logout');
+
 var session;
 $rform.on('submit', function(e) {
     e.preventDefault();
@@ -28,6 +30,20 @@ $lform.on('submit', function(e) {
     });
 });
 
+/* $logout.on('click', function() {
+    $.ajax({
+        type:       "POST",
+        cache:      false,
+        url:        '/php/login.php',
+        data:       $(this).serialize(),
+        success:    function(response) {
+            $('#loginClose').trigger('click');
+            session = JSON.parse(response);
+            startSession(session);
+        }
+    });
+}); */
+
 function showRegistration() {
     $('#loginForm').modal('hide');
     $('#registrationForm').modal('show');
@@ -35,6 +51,6 @@ function showRegistration() {
 
 function startSession(session) {
     $('#navbarResponsive > ul > li:nth-child(n+5)').toggle();
-    $('#uname').text("Welcome " + session.person + "!");
+    $('#uname').text("Welcome " + session.person + "!").addClass("push");
 }
 
