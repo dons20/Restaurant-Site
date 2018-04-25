@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Clayton's Medical Centre</title>
+        <title>Asia's Cafe</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -14,7 +14,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="">Clayton's Medical Center</a>
+        <a class="navbar-brand" href="">Asia's Cafe</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,109 +35,51 @@
               <a class="nav-link" href="#">Contact</a>
             </li>
             <li class="nav-item">
-                <a id="log" href="#loginForm" class="nav-link" data-toggle="modal">Login</a>
+                <a id="login" href="#loginForm" class="nav-link" data-toggle="modal">Login</a>
             </li>
             <li class="nav-item">
                 <a id="reg" href="#registrationForm" class="nav-link" data-toggle="modal">Register</a>
+            </li>
+            <li class="nav-item" style="display: none;">
+                <a id="uname" href="javascript:void(0)" class="nav-link" data-toggle="modal">Username</a>
+            </li>
+            <li class="nav-item" style="display: none;">
+                <a id="logout" href="/php/logout.php" class="nav-link">Logout</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <!-- Header with Background Image -->
-    <div class="business-header">
-      <div class="container h-100">
-        <div class="row h-75">
-          <div class="col align-self-center text-center">
-            <h1 class="display-3 text-white mt-4">Your Health is Our Priority</h1>
-            <button type="button" class="btn btn-primary btn-lg mt-4">Schedule an Appointment</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- Page Content -->
-    <div class="container">
+    <div id="main-page" class="container mx-auto my-5">
 
       <div class="row">
-        <div class="col-sm-8">
-          <h2 class="mt-4">What We Do</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A deserunt neque tempore recusandae animi soluta quasi? Asperiores rem dolore eaque vel, porro, soluta unde debitis aliquam laboriosam. Repellat explicabo, maiores!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis optio neque consectetur consequatur magni in nisi, natus beatae quidem quam odit commodi ducimus totam eum, alias, adipisci nesciunt voluptate. Voluptatum.</p>
-          <p>
-            <a class="btn btn-primary btn-lg" href="#">Learn More &raquo;</a>
-          </p>
+        <div class="col-4">
+          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Breakfast</a>
+            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
+            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+          </div>
         </div>
-        <div class="col-sm-4">
-          <h2 class="mt-4">Contact Us</h2>
-          <address>
-            <strong>Clayton's Medical Center</strong>
-            <br>123 Somewhere In
-            <br>St. Catherine, Jamaica 12345
-            <br>
-          </address>
-          <address>
-            <abbr title="Phone">P:</abbr>
-            (123) 456-7890
-            <br>
-            <abbr title="Email">E:</abbr>
-            <a href="mailto:#">keno@tobeadded.com</a>
-          </address>
+        <div class="col-8">
+          <div class="tab-content" id="v-pills-tabContent">
+            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">Sample Content</div>
+            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">Content 2</div>
+            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">Content 3</div>
+            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">Content 4</div>
+          </div>
         </div>
       </div>
-      <!-- /.row -->
-
-      <!-- <div class="row">
-        <div class="col-sm-4 my-4">
-          <div class="card">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 my-4">
-          <div class="card">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-4 my-4">
-          <div class="card">
-            <img class="card-img-top" src="http://placehold.it/300x200" alt="">
-            <div class="card-body">
-              <h4 class="card-title">Card title</h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-            </div>
-            <div class="card-footer">
-              <a href="#" class="btn btn-primary">Find Out More!</a>
-            </div>
-          </div>
-        </div> -->
-
-      </div>
-      <!-- /.row -->
 
     </div>
-    <!-- /.container -->
 
     <!-- Footer -->
     <footer class="py-5 bg-dark">
       <div class="container">
         <p class="m-0 text-center text-white">Copyright &copy; Keno Clayton 2018</p>
       </div>
-      <!-- /.container -->
     </footer>
 
     <!-- Login Form -->
@@ -154,10 +96,12 @@
                 <div class="modal-body">
                     <form method="post">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="username" placeholder="Username" required="required">		
+                            <input type="text" class="form-control mb-x" name="username" required pattern="\S.*\S">	
+                            <label>Username</label>	
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password" placeholder="Password" required="required">	
+                            <input type="password" class="form-control" name="password" autocomplete="on" required pattern="\S.*\S">	
+                            <label>Password</label>
                         </div>        
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
@@ -165,8 +109,8 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <a href="#">Forgot Password?</a>
-                    <a href="#registrationForm" data-dismiss="modal" data-toggle="modal">Don't have an account?</a>
+                    <a href="javascript:void(0)">Forgot Password?</a>
+                    <a href="javascript:void(0)" onclick="$('#loginForm').one('hidden.bs.modal', function() { $('#registrationForm').modal('show'); }).modal('hide');">Don't have an account?</a>
                 </div>
             </div>
         </div>
@@ -185,20 +129,20 @@
                 <div class="modal-body">
                     <form method="post">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="username" required>		
+                            <input type="text" class="form-control mb-x" name="username" required>		
                             <!-- <span class="help-block"></span> -->
                             <label>Username</label>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" name="password" required>
+                            <input type="password" class="form-control mb-x" name="password" autocomplete="on" required>
                             <label>Password</label>	
                         </div>      
                         <div class="form-group">
-                            <input type="password" class="form-control" name="confirm_password" required>	
+                            <input type="password" class="form-control mb-x" name="confirm_password" autocomplete="on" required>	
                             <label>Confirm Password</label>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="first_name" required>		
+                            <input type="text" class="form-control mb-x" name="first_name" required>		
                             <label>First Name</label>
                         </div>      
                         <div class="form-group">
@@ -211,7 +155,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <p>Already have an account? <a href="#loginForm" data-dismiss="modal" data-toggle="modal">Login here</a>.</p>
+                    <p>Already have an account? <a href="javascript:void(0)" onclick="$('#registrationForm').one('hidden.bs.modal', function() { $('#loginForm').modal('show'); }).modal('hide');">Login here</a>.</p>
                 </div>
             </div>
         </div>

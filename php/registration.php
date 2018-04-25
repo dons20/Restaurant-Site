@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $username_err = "Please enter a username.";
     } else{
         // Prepare a select statement
-        $sql = "SELECT id FROM doctor_office WHERE username = :username";
+        $sql = "SELECT id FROM users WHERE username = :username";
         
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -94,10 +94,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
+    if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($first_name_err) && empty($last_name_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO doctor_office (username, password, Fname, Lname, Registered_Date) VALUES (:username, :password, :fname, :lname, NOW())";
+        $sql = "INSERT INTO users (username, password, first_name, last_name, registration_date) VALUES (:username, :password, :fname, :lname, NOW())";
          
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -116,7 +116,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
-                header("location: index.php");
+                header("location: ../index.php");
             } else{
                 echo "Something went wrong. Please try again later.";
             }

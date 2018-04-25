@@ -30,7 +30,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT `username`, `password` FROM `doctor_office` WHERE `username` = :username";
+        $sql = "SELECT `username`, `password`, `first_name` FROM `users` WHERE `username` = :username";
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bindParam(':username', $param_username, PDO::PARAM_STR);
@@ -49,8 +49,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             save the username to the session */
                             session_start();
                             $_SESSION['username'] = $username;
+                            $_SESSION['first_name'] = $row['first_name'];
                             welcome();
-                            //header("location: welcome.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = 'The password you entered was not valid.';
@@ -76,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 function welcome() {
-    $returnVal = array('username', $_SESSION['username']);
+    $returnVal = array("username" => $_SESSION["username"], "person" => $_SESSION["first_name"]);
     echo json_encode($returnVal);
     
     // If session variable is not set it will redirect to login page
