@@ -30,20 +30,6 @@ $lform.on('submit', function(e) {
     });
 });
 
-/* $logout.on('click', function() {
-    $.ajax({
-        type:       "POST",
-        cache:      false,
-        url:        '/php/login.php',
-        data:       $(this).serialize(),
-        success:    function(response) {
-            $('#loginClose').trigger('click');
-            session = JSON.parse(response);
-            startSession(session);
-        }
-    });
-}); */
-
 function showRegistration() {
     $('#loginForm').modal('hide');
     $('#registrationForm').modal('show');
