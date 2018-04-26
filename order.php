@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -118,16 +119,16 @@
                                 <div class="tabs-wrapper">
                                     <ul class="nav classic-tabs tabs-cyan" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link waves-light active" data-toggle="tab" href="#panel51" role="tab">Breakfast</a>
+                                            <a class="nav-link waves-light active" data-toggle="tab" href="#menuPanelA" role="tab">Breakfast</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link waves-light" data-toggle="tab" href="#panel52" role="tab">Lunch</a>
+                                            <a class="nav-link waves-light" data-toggle="tab" href="#menuPanelB" role="tab">Lunch</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link waves-light" data-toggle="tab" href="#panel53" role="tab">Dessert</a>
+                                            <a class="nav-link waves-light" data-toggle="tab" href="#menuPanelC" role="tab">Dessert</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link waves-light" data-toggle="tab" href="#panel54" role="tab">Beverages</a>
+                                            <a class="nav-link waves-light" data-toggle="tab" href="#menuPanelD" role="tab">Beverages</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -136,7 +137,7 @@
                                 <div class="tab-content card">
 
                                     <!--Panel 1-->
-                                    <div class="tab-pane fade in show active" id="panel51" role="tabpanel">
+                                    <div class="tab-pane fade in show active" id="menuPanelA" role="tabpanel">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima,
                                             soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam,
                                             pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
@@ -145,7 +146,7 @@
                                     <!--/.Panel 1-->
 
                                     <!--Panel 2-->
-                                    <div class="tab-pane fade" id="panel52" role="tabpanel">
+                                    <div class="tab-pane fade" id="menuPanelB" role="tabpanel">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima,
                                             soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam,
                                             pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
@@ -157,7 +158,7 @@
                                     <!--/.Panel 2-->
 
                                     <!--Panel 3-->
-                                    <div class="tab-pane fade" id="panel53" role="tabpanel">
+                                    <div class="tab-pane fade" id="menuPanelC" role="tabpanel">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima,
                                             soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam,
                                             pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
@@ -166,7 +167,7 @@
                                     <!--/.Panel 3-->
 
                                     <!--Panel 4-->
-                                    <div class="tab-pane fade" id="panel54" role="tabpanel">
+                                    <div class="tab-pane fade" id="menuPanelD" role="tabpanel">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima,
                                             soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam,
                                             pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
@@ -349,9 +350,10 @@
     <!-- User Scripts -->
     <script src="js/scripts.js"></script>
     <?php
-        session_start();
         if (isset($_SESSION["first_name"])) {
-            echo '<script>$("#uname").text("Welcome ' . $_SESSION["first_name"] . '!").addClass("yellow-text");</script>';
+            echo '<script type="text/javascript">',
+                    "\r\t" . '$("#uname").text("Welcome ' . $_SESSION["first_name"] . '!").addClass("yellow-text");' . "\r",
+                '</script>';
         }
     ?>
     <!-- Carousel options -->
