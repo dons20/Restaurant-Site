@@ -2,7 +2,8 @@ var $rform =  $('#registrationForm form'),
     $lform =  $('#loginForm form'),
     $loginBtn = $('#loginBtn'),
     $signUpBtn = $('#signUpBtn'),
-    $logout = $('#logout');
+    $logout = $('#logout'),
+    $intro = $('#intro');
 
 var session, activeElement;
 $rform.on('submit', function(e) {
@@ -87,6 +88,10 @@ function showError(error, type) {
         }, 2500);
     }
 }
+
+$(document).on('click', '.tabBtn', function() {
+    $intro.addClass('scroll').css('background-image', 'url("../img/' + $(this).text().toLowerCase() + '.jpg');
+});
 
 $(document).on('click', 'a[href^="#"]', function(e) {
     // target element id

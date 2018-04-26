@@ -119,22 +119,22 @@
                                 <div class="tabs-wrapper">
                                     <ul class="nav classic-tabs tabs-cyan" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link waves-light active" data-toggle="tab" href="#menuPanelA" role="tab">Breakfast</a>
+                                            <a class="nav-link waves-light tabBtn active" data-toggle="tab" href="#menuPanelA" role="tab">Breakfast</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link waves-light" data-toggle="tab" href="#menuPanelB" role="tab">Lunch</a>
+                                            <a class="nav-link waves-light tabBtn" data-toggle="tab" href="#menuPanelB" role="tab">Lunch</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link waves-light" data-toggle="tab" href="#menuPanelC" role="tab">Dessert</a>
+                                            <a class="nav-link waves-light tabBtn" data-toggle="tab" href="#menuPanelC" role="tab">Dessert</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link waves-light" data-toggle="tab" href="#menuPanelD" role="tab">Beverages</a>
+                                            <a class="nav-link waves-light tabBtn" data-toggle="tab" href="#menuPanelD" role="tab">Beverages</a>
                                         </li>
                                     </ul>
                                 </div>
 
                                 <!-- Tab panels -->
-                                <div class="tab-content card">
+                                <div id="tabcontent" class="tab-content card">
 
                                     <!--Panel 1-->
                                     <div class="tab-pane fade in show active" id="menuPanelA" role="tabpanel">
@@ -329,6 +329,7 @@
         <!--Copyright-->
         <div class="footer-copyright py-3 text-center">
             &copy; 2018 Copyright: <a href="javascript:void(0);"> Group #1 VTDI</a>
+            <a href="https://www.vecteezy.com">Free Vectors by Vecteezy!</a>
         </div>
         <!--/.Copyright-->
 

@@ -50,6 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             session_start();
                             $_SESSION['username'] = $username;
                             $_SESSION['first_name'] = $row['first_name'];
+                            $_SESSION['permissions'] = $row['permissions'];
                             welcome();
                         } else{
                             // Display an error message if password is not valid
