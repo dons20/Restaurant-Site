@@ -11,7 +11,7 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
@@ -28,7 +28,7 @@
             <div class="container">
 
                 <!-- Navbar brand -->
-                <a class="navbar-brand" href="#">Asia's Cafe</a>
+                <a class="navbar-brand" href="./">Asia's Cafe</a>
 
                 <!-- Collapse button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
@@ -46,11 +46,11 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#examples">About Us</a>
+                            <a class="nav-link" href="./#examples">About Us</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact Us</a>
+                            <a class="nav-link" href="./#contact">Contact Us</a>
                         </li>
                     </ul>
                     <!-- Links -->
@@ -72,15 +72,23 @@
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
-
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">login </a>
+                        <li class="nav-item" style="display: none;">
+                            <a id="login" href="#loginForm" class="nav-link" data-toggle="modal">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" href="javascript:void(0);">|</a>
                         </li>
+                        <li class="nav-item" style="display: none;">
+                            <a id="reg" href="#registrationForm" class="nav-link" data-toggle="modal">Register</a>
+                        </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">register</a>
+                            <a id="uname" href="javascript:void(0)" class="nav-link" data-toggle="modal">Username</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a id="order" href="order.php" class="nav-link disabled">Place Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="logout" href="/php/logout.php" class="nav-link">Logout</a>
                         </li>
                     </ul>
 
@@ -329,50 +337,25 @@
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Lazy Load Plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js"></script>
-
-    <!--Google Maps-->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCU3af3Y2lAd1am3JHctL2VQlNablniaFI&callback"
-        type="text/javascript" defer></script> -->
-
-    <!-- Google Maps settings -->
-    <!-- <script>
-        // Regular map
-        function regular_map() {
-            var var_location = new google.maps.LatLng(40.725118, -73.997699);
-
-            var var_mapoptions = {
-                center: var_location,
-                zoom: 14
-            };
-
-            var var_map = new google.maps.Map(document.getElementById("map-container"),
-                var_mapoptions);
-
-            var var_marker = new google.maps.Marker({
-                position: var_location,
-                map: var_map,
-                title: "New York"
-            });
+    <!-- User Scripts -->
+    <script src="js/scripts.js"></script>
+    <?php
+        session_start();
+        if (isset($_SESSION["first_name"])) {
+            echo '<script>$("#uname").text("Welcome ' . $_SESSION["first_name"] . '!").addClass("yellow-text");</script>';
         }
-
-        // Initialize maps
-        google.maps.event.addDomListener(window, 'load', regular_map);
-    </script> -->
-
+    ?>
     <!-- Carousel options -->
     <script>
-        $('.carousel').carousel({
-            interval: 3000,
-        })
         var myLazyLoad = new LazyLoad({
             elements_selector: ".lazy"
         });

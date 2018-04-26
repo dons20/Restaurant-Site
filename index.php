@@ -43,11 +43,11 @@
                     <!-- Links -->
                     <ul class="navbar-nav mr-auto smooth-scroll">
                         <li class="nav-item">
-                            <a class="nav-link" href="./">Home</a>
+                            <a class="nav-link" href="#intro" id="home">Home</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#examples">About Us</a>
+                            <a class="nav-link" href="#aboutus">About Us</a>
                         </li>
 
                         <li class="nav-item">
@@ -86,7 +86,7 @@
                             <a id="uname" href="javascript:void(0)" class="nav-link" data-toggle="modal">Username</a>
                         </li>
                         <li class="nav-item" style="display: none;">
-                            <a id="order" href="javascript:void(0)" class="nav-link">Place Order</a>
+                            <a id="order" href="order.php" class="nav-link">Place Order</a>
                         </li>
                         <li class="nav-item" style="display: none;">
                             <a id="logout" href="/php/logout.php" class="nav-link">Logout</a>
@@ -147,13 +147,163 @@
 
     <!--Main layout-->
     <main class="mt-5">
+        <hr class="my-5">
+
+        <!--Section: About us-->
+        <section id="aboutus">
+
+            <!-- Heading -->
+            <h2 class="mb-5 font-weight-bold text-center">About Us</h2>
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-6 mb-4">
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-md-5 text-center">
+
+                    <!--Excerpt-->
+                    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+                        placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis debitis
+                        aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
+                        id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et
+                        aut officiis debitis aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                        impedit quo minus id quod maxime
+                    </p>
+
+                    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+                        placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis debitis
+                        aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
+                        id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et
+                        aut officiis debitis aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                        impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
+                        repellendus et aut officiis debitis aut rerum.</p>
+
+                    <a class="btn btn-primary btn-md">Read more</a>
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+        </section>
+        <!--Section: About us-->
+
+        <hr class="my-5">
+
+        <!--Section: Contact-->
+        <section id="contact">
+
+            <!-- Heading -->
+            <h2 class="mb-5 font-weight-bold text-center">Contact us</h2>
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-lg-5 col-md-12">
+
+                    <!-- Form contact -->
+                    <form class="p-5">
+                        <div class="md-form form-sm">
+                            <i class="fa fa-user prefix grey-text"></i>
+                            <input type="text" id="opt1" class="form-control form-control-sm" autocomplete='name'>
+                            <label for="opt1">Your name</label>
+                        </div>
+                        <div class="md-form form-sm">
+                            <i class="fa fa-envelope prefix grey-text"></i>
+                            <input type="text" id="opt2" class="form-control form-control-sm" autocomplete='email'>
+                            <label for="opt2">Your email</label>
+                        </div>
+                        <div class="md-form form-sm">
+                            <i class="fa fa-tag prefix grey-text"></i>
+                            <input type="text" id="opt3" class="form-control form-control-sm">
+                            <label for="opt3">Subject</label>
+                        </div>
+                        <div class="md-form form-sm">
+                            <i class="fa fa-pencil prefix grey-text"></i>
+                            <textarea type="text" id="opt4" class="md-textarea form-control form-control-sm" rows="4"></textarea>
+                            <label for="opt4">Your message</label>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button class="btn btn-primary">Send
+                                <i class="fa fa-paper-plane-o ml-1"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <!-- Form contact -->
+
+                    <!--Grid column-->
+
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12">
+
+
+                    <!--Grid row-->
+                    <div class="row text-center">
+
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-12 mb-3">
+
+                            <p>
+                                <i class="fa fa-map fa-1x mr-2 grey-text"></i>Vocational Training Development Institute, JM 10012</p>
+
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-3">
+
+                            <p>
+                                <i class="fa fa-building fa-1x mr-2 grey-text"></i>Mon - Fri, 8:00-5:00</p>
+
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-3">
+
+                            <p>
+                                <i class="fa fa-phone fa-1x mr-2 grey-text"></i>+ 1(876)975-6658</p>
+
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+
+
+                    <!--Google map-->
+                    <div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 400px">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.0246893851568!2d-76.74061778511465!3d18.02405778769993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edb3ed230a1d1f9%3A0xd05acd895429b661!2sVocational+Training+Development+Institute!5e0!3m2!1sen!2sjm!4v1524114289221"
+                            width="745" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+        </section>
+        <!--Section: Contact-->
 
     </main>
     <!--Main layout-->
 
     <!--Footer-->
     <footer class="page-footer unique-color-dark pt-0">
-
 
         <!-- Social buttons -->
         <div class="primary-color">
@@ -286,15 +436,6 @@
     </footer>
     <!--/.Footer-->
 
-    <!--Header-->
-    <!-- <div class="modal-header primary-color white-text">
-            <h4 class="title">
-                <i class="fa fa-pencil"></i> Contact form</h4>
-            <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button>
-        </div> -->
-
     <!-- Login Form -->
     <div id="loginForm" class="modal fade">
         <div class="modal-dialog modal-login cascading-modal">
@@ -314,7 +455,7 @@
                             <label>Password</label>
                         </div>        
                         <div class="form-group">
-                            <button id="loginBtn" type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
+                            <button id="loginBtn" type="submit" class="btn btn-primary btn-lg btn-block login-btn"><i class="fas fa-pencil-alt"></i> Login</button>
                         </div>
                     </form>
                 </div>
@@ -327,37 +468,40 @@
     </div>
 
     <div id="registrationForm" class="modal fade">
-        <div class="modal-dialog modal-login modal-lg cascading-modal">
+        <div class="modal-dialog modal-login cascading-modal">
             <div class="modal-content">
                 <div class="modal-header primary-color white-text">
-                    <h4 class="title"><i class="fas fa-pencil"></i>Register an account</h4>	
+                    <h4 class="title"><i class="far fa-clipboard"></i> Register an account</h4>	
                     <button id="regClose" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form method="post">
                         <div class="form-group">
-                            <input type="text" class="form-control mb-x" name="username" required>		
-                            <!-- <span class="help-block"></span> -->
+                            <input type="text" class="form-control mb-x" name="username" required pattern="\S.*\S">	
                             <label>Username</label>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control mb-x" name="password" autocomplete="on" required>
+                            <input type="password" class="form-control mb-x" name="password" autocomplete="on" required pattern="\S.*\S">
                             <label>Password</label>	
                         </div>      
                         <div class="form-group">
-                            <input type="password" class="form-control mb-x" name="confirm_password" autocomplete="on" required>	
+                            <input type="password" class="form-control mb-x" name="confirm_password" autocomplete="on" required pattern="\S.*\S">	
                             <label>Confirm Password</label>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control mb-x" name="first_name" required>		
+                            <input type="text" class="form-control mb-x" name="first_name" required pattern="\S.*\S">
                             <label>First Name</label>
                         </div>      
                         <div class="form-group">
-                            <input type="text" class="form-control" name="last_name" required>	
+                            <input type="text" class="form-control" name="last_name" required pattern="\S.*\S">
                             <label>Last Name</label>
                         </div>      
                         <div class="form-group">
-                            <button id="signUpBtn" type="submit" class="btn btn-primary btn-lg btn-block login-btn">Sign Up</button>
+                            <input type="text" class="form-control" name="access_code" pattern="\S.*\S">	
+                            <label>(Optional) Access Code</label>
+                        </div>      
+                        <div class="form-group">
+                            <button id="signUpBtn" type="submit" class="btn btn-primary btn-lg btn-block login-btn"><i class="fas fa-pencil-alt"></i> Sign Up</button>
                         </div>
                     </form>
                 </div>
@@ -367,7 +511,6 @@
             </div>
         </div>
     </div>
-
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
@@ -382,41 +525,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js"></script>
     <!-- User Scripts -->
     <script src="js/scripts.js"></script>
-
-    <!--Google Maps-->
-    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCU3af3Y2lAd1am3JHctL2VQlNablniaFI&callback"
-        type="text/javascript" defer></script> -->
-
-    <!-- Google Maps settings -->
-    <!-- <script>
-        // Regular map
-        function regular_map() {
-            var var_location = new google.maps.LatLng(40.725118, -73.997699);
-
-            var var_mapoptions = {
-                center: var_location,
-                zoom: 14
-            };
-
-            var var_map = new google.maps.Map(document.getElementById("map-container"),
-                var_mapoptions);
-
-            var var_marker = new google.maps.Marker({
-                position: var_location,
-                map: var_map,
-                title: "New York"
-            });
+    <?php
+        session_start();
+        if (isset($_SESSION["first_name"])) {
+            echo '<script> resumeSession("' . $_SESSION["first_name"] . '");</script>';
         }
-
-        // Initialize maps
-        google.maps.event.addDomListener(window, 'load', regular_map);
-    </script> -->
-
+    ?>
     <!-- Carousel options -->
     <script>
-        $('.carousel').carousel({
-            interval: 3000,
-        })
+        document.getElementById('home').click();
         var myLazyLoad = new LazyLoad({
             elements_selector: ".lazy"
         });
