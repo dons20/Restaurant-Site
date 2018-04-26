@@ -5,8 +5,7 @@ require_once 'connection.php';
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = $first_name = $last_name = "";
 $username_err = $password_err = $confirm_password_err = $first_name_err = $last_name_err = "";
-$gender = 'M';
-$age = 0;
+$permissions = 'C';
 $date = "";
  
 // Processing form data when form is submitted
@@ -30,11 +29,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if($stmt->execute()){
                 if($stmt->rowCount() == 1){
                     $username_err = "This username is already taken.";
+                    $returnVal = array("error" => $username_err);
+                    echo json_encode($returnVal);
                 } else{
                     $username = trim($_POST["username"]);
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                $returnVal = array("error" => "Oops! Something went wrong. Please try again later.");
+                echo json_encode($returnVal);
             }
         }
          
@@ -45,8 +47,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate password
     if(empty(trim($_POST['password']))){
         $password_err = "Please enter a password.";     
+        $returnVal = array("error" => $password_err);
+        echo json_encode($returnVal);
     } elseif(strlen(trim($_POST['password'])) < 6){
         $password_err = "Password must have atleast 6 characters.";
+        $returnVal = array("error" => $password_err);
+        echo json_encode($returnVal);
     } else{
         $password = trim($_POST['password']);
     }
@@ -61,6 +67,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $confirm_password = trim($_POST['confirm_password']);
             if($password != $confirm_password){
                 $confirm_password_err = 'Password did not match.';
+                $returnVal = array("error" => $confirm_password_err);
+                echo json_encode($returnVal);
             }
         }
     } else {
@@ -92,12 +100,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else {
         $last_name = null;
     }
+
+    //Validate access code if present
+    if (isset($_POST["access_code"]))
+    {
+        if(!empty(trim($_POST['access_code']))) {
+            $accessCode = trim($_POST['access_code']);
+            if ($accessCode === "SUPERUSER") {
+                $permissions = 'A';
+            } else if ($accessCode === "EDITOR") {
+                $permissions = 'E';
+            }
+        }
+    }
     
     // Check input errors before inserting in database
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($first_name_err) && empty($last_name_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, password, first_name, last_name, registration_date) VALUES (:username, :password, :fname, :lname, NOW())";
+        $sql = "INSERT INTO users (username, password, first_name, last_name, registration_date, permissions) VALUES (:username, :password, :fname, :lname, NOW(), :permissions)";
          
         if($stmt = $pdo->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -105,6 +126,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $stmt->bindParam(':password', $param_password, PDO::PARAM_STR);
             $stmt->bindParam(':fname', $param_fname, PDO::PARAM_STR);
             $stmt->bindParam(':lname', $param_lname, PDO::PARAM_STR);
+            $stmt->bindParam(':permissions', $param_permissions, PDO::PARAM_STR);
             
             
             // Set parameters
@@ -112,13 +134,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
             $param_fname = $first_name;
             $param_lname = $last_name;
+            $param_permissions = $permissions;
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
-                header("location: ../index.php");
+                header("location: ./");
             } else{
-                echo "Something went wrong. Please try again later.";
+                $returnVal = array("error" => "Something went wrong. Please try again later.");
+                echo json_encode($returnVal);
             }
         }
          

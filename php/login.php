@@ -54,16 +54,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         } else{
                             // Display an error message if password is not valid
                             $password_err = 'The password you entered was not valid.';
-                            echo $password_err;
+                            $returnVal = array("error" => $password_err);
+                            echo json_encode($returnVal);
                         }
                     }
                 } else{
                     // Display an error message if username doesn't exist
                     $username_err = 'No account found with that username.';
-                    echo $username_err;
+                    $returnVal = array("error" => $username_err);
+                    echo json_encode($returnVal);
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                $returnVal = array("error" => "Oops! Something went wrong. Please try again later.");
+                echo json_encode($returnVal);
             }
         }
         
@@ -81,8 +84,8 @@ function welcome() {
     
     // If session variable is not set it will redirect to login page
     if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
-        header("location: error.php");
-    exit;
+        header("location: ./");
+        exit;
     }
 }
 ?>
