@@ -11,7 +11,7 @@
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
@@ -19,7 +19,6 @@
 </head>
 
 <body>
-
     <!--Main Navigation-->
     <header>
 
@@ -28,7 +27,7 @@
             <div class="container">
 
                 <!-- Navbar brand -->
-                <a class="navbar-brand" href="./">Asia's Cafe</a>
+                <a class="navbar-brand" href="#">Asia's Cafe</a>
 
                 <!-- Collapse button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
@@ -73,23 +72,15 @@
                                 <i class="fab fa-instagram"></i>
                             </a>
                         </li>
+
                         <li class="nav-item">
-                            <a id="login" href="#loginForm" class="nav-link" data-toggle="modal">Login</a>
+                            <a class="nav-link" href="#contact">login </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link disabled" href="javascript:void(0);">|</a>
                         </li>
                         <li class="nav-item">
-                            <a id="reg" href="#registrationForm" class="nav-link" data-toggle="modal">Register</a>
-                        </li>
-                        <li class="nav-item" style="display: none;">
-                            <a id="uname" href="javascript:void(0)" class="nav-link" data-toggle="modal">Username</a>
-                        </li>
-                        <li class="nav-item" style="display: none;">
-                            <a id="order" href="javascript:void(0)" class="nav-link">Place Order</a>
-                        </li>
-                        <li class="nav-item" style="display: none;">
-                            <a id="logout" href="/php/logout.php" class="nav-link">Logout</a>
+                            <a class="nav-link" href="#contact">register</a>
                         </li>
                     </ul>
 
@@ -147,13 +138,174 @@
 
     <!--Main layout-->
     <main class="mt-5">
+        <hr class="my-5">
+
+        <!--Section: About us-->
+        <section id="aboutus">
+
+            <!-- Heading -->
+            <h2 class="mb-5 font-weight-bold text-center">About Us</h2>
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-md-6 mb-4">
+
+
+
+                </div>
+                <!--Grid column-->
+
+
+                <!--Grid column-->
+                <div class="col-md-5 text-center">
+
+                    <!--Excerpt-->
+
+
+                    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+                        placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis debitis
+                        aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
+                        id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et
+                        aut officiis debitis aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                        impedit quo minus id quod maxime
+                    </p>
+
+                    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+                        placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis debitis
+                        aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
+                        id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et
+                        aut officiis debitis aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
+                        impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
+                        repellendus et aut officiis debitis aut rerum.</p>
+
+                    <a class="btn btn-primary btn-md">Read more</a>
+
+                </div>
+                <!--Grid column-->
+
+
+            </div>
+            <!--Grid row-->
+
+        </section>
+        <!--Section: About us-->
+
+        <hr class="my-5">
+
+        <!--Section: Contact-->
+        <section id="contact">
+
+            <!-- Heading -->
+            <h2 class="mb-5 font-weight-bold text-center">Contact us</h2>
+
+            <!--Grid row-->
+            <div class="row">
+
+                <!--Grid column-->
+                <div class="col-lg-5 col-md-12">
+
+                    <!-- Form contact -->
+                    <form class="p-5">
+                        <div class="md-form form-sm">
+                            <i class="fa fa-user prefix grey-text"></i>
+                            <input type="text" id="form3" class="form-control form-control-sm">
+                            <label for="form3">Your name</label>
+                        </div>
+                        <div class="md-form form-sm">
+                            <i class="fa fa-envelope prefix grey-text"></i>
+                            <input type="text" id="form2" class="form-control form-control-sm">
+                            <label for="form2">Your email</label>
+                        </div>
+                        <div class="md-form form-sm">
+                            <i class="fa fa-tag prefix grey-text"></i>
+                            <input type="text" id="form32" class="form-control form-control-sm">
+                            <label for="form34">Subject</label>
+                        </div>
+                        <div class="md-form form-sm">
+                            <i class="fa fa-pencil prefix grey-text"></i>
+                            <textarea type="text" id="form8" class="md-textarea form-control form-control-sm" rows="4"></textarea>
+                            <label for="form8">Your message</label>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button class="btn btn-primary">Send
+                                <i class="fa fa-paper-plane-o ml-1"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <!-- Form contact -->
+
+                    <!--Grid column-->
+
+
+                </div>
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-6 col-md-12">
+
+
+                    <!--Grid row-->
+                    <div class="row text-center">
+
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-12 mb-3">
+
+                            <p>
+                                <i class="fa fa-map fa-1x mr-2 grey-text"></i>Vocational Training Development Institute, JM 10012</p>
+
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-3">
+
+                            <p>
+                                <i class="fa fa-building fa-1x mr-2 grey-text"></i>Mon - Fri, 8:00-5:00</p>
+
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-lg-4 col-md-6 mb-3">
+
+                            <p>
+                                <i class="fa fa-phone fa-1x mr-2 grey-text"></i>+ 1(876)975-6658</p>
+
+                        </div>
+                        <!--Grid column-->
+
+                    </div>
+                    <!--Grid row-->
+
+
+
+                    <!--Google map-->
+                    <div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 400px">
+
+
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.0246893851568!2d-76.74061778511465!3d18.02405778769993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edb3ed230a1d1f9%3A0xd05acd895429b661!2sVocational+Training+Development+Institute!5e0!3m2!1sen!2sjm!4v1524114289221"
+                            width="745" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+                    </div>
+
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+        </section>
+        <!--Section: Contact-->
 
     </main>
     <!--Main layout-->
 
     <!--Footer-->
     <footer class="page-footer unique-color-dark pt-0">
-
 
         <!-- Social buttons -->
         <div class="primary-color">
@@ -279,109 +431,26 @@
 
         <!--Copyright-->
         <div class="footer-copyright py-3 text-center">
-            &copy; 2018 Copyright: <a href="javascript:void(0);"> Group #1 VTDI</a>
+            &copy; 2018 Copyright:
+            <a href="javascript:void(0);"> Group #1 VTDI</a>
         </div>
         <!--/.Copyright-->
 
     </footer>
     <!--/.Footer-->
 
-    <!--Header-->
-    <!-- <div class="modal-header primary-color white-text">
-            <h4 class="title">
-                <i class="fa fa-pencil"></i> Contact form</h4>
-            <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-            </button>
-        </div> -->
-
-    <!-- Login Form -->
-    <div id="loginForm" class="modal fade">
-        <div class="modal-dialog modal-login cascading-modal">
-            <div class="modal-content">
-                <div class="modal-header primary-color white-text">
-                    <h4 class="title"><i class="fas fa-user"></i> Member Login</h4>	
-                    <button id="loginClose" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form method="post">
-                        <div class="form-group">
-                            <input type="text" class="form-control mb-x" name="username" required pattern="\S.*\S">	
-                            <label>Username</label>	
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control" name="password" autocomplete="on" required pattern="\S.*\S">	
-                            <label>Password</label>
-                        </div>        
-                        <div class="form-group">
-                            <button id="loginBtn" type="submit" class="btn btn-primary btn-lg btn-block login-btn">Login</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <a href="javascript:void(0)">Forgot Password?</a>
-                    <a href="javascript:void(0)" onclick="$('#loginForm').one('hidden.bs.modal', function() { $('#registrationForm').modal('show'); }).modal('hide');">Don't have an account?</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="registrationForm" class="modal fade">
-        <div class="modal-dialog modal-login modal-lg cascading-modal">
-            <div class="modal-content">
-                <div class="modal-header primary-color white-text">
-                    <h4 class="title"><i class="fas fa-pencil"></i>Register an account</h4>	
-                    <button id="regClose" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form method="post">
-                        <div class="form-group">
-                            <input type="text" class="form-control mb-x" name="username" required>		
-                            <!-- <span class="help-block"></span> -->
-                            <label>Username</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="password" class="form-control mb-x" name="password" autocomplete="on" required>
-                            <label>Password</label>	
-                        </div>      
-                        <div class="form-group">
-                            <input type="password" class="form-control mb-x" name="confirm_password" autocomplete="on" required>	
-                            <label>Confirm Password</label>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control mb-x" name="first_name" required>		
-                            <label>First Name</label>
-                        </div>      
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="last_name" required>	
-                            <label>Last Name</label>
-                        </div>      
-                        <div class="form-group">
-                            <button id="signUpBtn" type="submit" class="btn btn-primary btn-lg btn-block login-btn">Sign Up</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <p>Already have an account? <a href="javascript:void(0)" onclick="$('#registrationForm').one('hidden.bs.modal', function() { $('#loginForm').modal('show'); }).modal('hide');">Login here</a>.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Lazy Load Plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js"></script>
-    <!-- User Scripts -->
-    <script src="js/scripts.js"></script>
 
     <!--Google Maps-->
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCU3af3Y2lAd1am3JHctL2VQlNablniaFI&callback"
