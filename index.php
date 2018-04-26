@@ -56,8 +56,6 @@
                     </ul>
                     <!-- Links -->
 
-
-
                     <!-- Social Icon  -->
                     <ul class="navbar-nav nav-flex-icons">
                         <li class="nav-item">
@@ -86,6 +84,9 @@
                         </li>
                         <li class="nav-item" style="display: none;">
                             <a id="uname" href="javascript:void(0)" class="nav-link" data-toggle="modal">Username</a>
+                        </li>
+                        <li class="nav-item" style="display: none;">
+                            <a id="order" href="javascript:void(0)" class="nav-link">Place Order</a>
                         </li>
                         <li class="nav-item" style="display: none;">
                             <a id="logout" href="/php/logout.php" class="nav-link">Logout</a>
@@ -285,15 +286,24 @@
     </footer>
     <!--/.Footer-->
 
+    <!--Header-->
+    <!-- <div class="modal-header primary-color white-text">
+            <h4 class="title">
+                <i class="fa fa-pencil"></i> Contact form</h4>
+            <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div> -->
+
     <!-- Login Form -->
     <div id="loginForm" class="modal fade">
-        <div class="modal-dialog modal-login">
+        <div class="modal-dialog modal-login cascading-modal">
             <div class="modal-content">
-                <div class="modal-header">
-                    <div class="avatar">
+                <div class="modal-header primary-color white-text">
+                    <!-- <div class="avatar">
                         <img src="images/avatar.png" alt="Avatar">
-                    </div>				
-                    <h4 class="modal-title">Member Login</h4>	
+                    </div>				 -->
+                    <h4 class="title"><i class="fas fa-user"></i> Member Login</h4>	
                     <button id="loginClose" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -320,13 +330,13 @@
     </div>
 
     <div id="registrationForm" class="modal fade">
-        <div class="modal-dialog modal-login modal-lg">
+        <div class="modal-dialog modal-login modal-lg cascading-modal">
             <div class="modal-content">
-                <div class="modal-header">
-                    <div class="avatar">
+                <div class="modal-header primary-color white-text">
+                    <!-- <div class="avatar">
                         <img src="images/avatar.png" alt="Avatar">
-                    </div>
-                    <h4 class="modal-title">Register an account</h4>	
+                    </div> -->
+                    <h4 class="title"><i class="fas fa-pencil"></i>Register an account</h4>	
                     <button id="regClose" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">

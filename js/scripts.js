@@ -36,7 +36,7 @@ function showRegistration() {
 }
 
 function startSession(session) {
-    $('#navbarResponsive > ul > li:nth-child(n+5)').toggle();
-    $('#uname').text("Welcome " + session.person + "!").addClass("push");
+    $('#login, #reg, #uname, #logout, #order').parent().toggle();
+    $('#uname').text("Welcome " + session.person + "!").addClass("yellow-text");
 }
 
