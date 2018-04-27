@@ -160,7 +160,10 @@
 
                 <!--Grid column-->
                 <div class="col-md-6 mb-4">
-
+		 <a href="img/menu.pdf"><p style="text-align:center">Download our menu (.pdf)</a>
+ 		<br> <br>
+ 		<img src="img/coupon.png" height="400" width="400">
+		
                 </div>
                 <!--Grid column-->
 
