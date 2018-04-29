@@ -171,10 +171,15 @@
                 <div class="col-md-5 text-center">
 
                     <!--Excerpt-->
-                    <p>Testing
+                    <p>	At Asia's Cafe we believe in only the best! Prime cuts of meat, hand picked produce and customer service is our priority. 
+			  Our menu is typically that of a chicken house heavily influenced by the Jamaican tradition of indoor grilling.
+			  We also compliment our menu with a number of 'yard style' dishes so there's something for everyone.
+			  Enjoy our breathtaking ambiance in our elegantly casual dining atmosphere. 
+			  Our wait staff believes in the merit system of excellent service and is employed on the basis of tips earned.
+			  Therefore you, our valued customer will never have to pay a mandatory service charge.
                     </p>
 
-                    <p>Test.
+                    <p>Thank you for choosing Asia's Cafe...!.
 		    </p>
 
                     <a class="btn btn-primary btn-md">Read more</a>
