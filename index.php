@@ -179,10 +179,10 @@
 			  Therefore you, our valued customer will never have to pay a mandatory service charge.
                     </p>
 
-                    <p>Thank you for choosing Asia's Cafe...!.
+                    <p><b>Thank you for choosing Asia's Cafe...!.</b>
 		    </p>
 
-                    <a class="btn btn-primary btn-md">Read more</a>
+                   
 
                 </div>
                 <!--Grid column-->
