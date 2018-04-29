@@ -328,7 +328,7 @@
 
         <!--Copyright-->
         <div class="footer-copyright py-3 text-center">
-            &copy; 2018 Copyright: <a href="javascript:void(0);"> Group #1 VTDI</a>
+            &copy; 2018 Copyright: <a href="javascript:void(0);"> Group #1 VTDI</a><br>
             <a href="https://www.vecteezy.com">Free Vectors by Vecteezy!</a>
         </div>
         <!--/.Copyright-->

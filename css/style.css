@@ -22,11 +22,8 @@ a:hover {
 }
 
 #intro.scroll > #introBG {
-    -webkit-animation: 10s scroll infinite linear;
-    animation: 10s scroll infinite linear;
-    background-position: initial;
-    background-repeat: repeat;
-    background-size: initial
+    -webkit-animation: 30s scroll infinite linear;
+    animation: 30s scroll infinite linear;
 }
 
 #tabcontent {
@@ -713,19 +710,19 @@ ul {
 
 @-webkit-keyframes scroll {
     0% {
-        transform: translate3D(0, 0, 0)
+        -webkit-transform: translate3D(0, 0, 0)
     }
     100% {
-        transform: translate3D(0, -150vh, 0)
+        -webkit-transform: translate3D(0, -150vh, 0)
     }
 }
 
 @keyframes scroll {
     0% {
-        transform: translate3D(0, 0, 0)
+            transform: translate3D(0, 0, 0)
     }
     100% {
-        transform: translate3D(0, -150vh, 0)
+            transform: translate3D(0, -150vh, 0)
     }
 }
 
