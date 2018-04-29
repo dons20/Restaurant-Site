@@ -9,19 +9,21 @@ a:hover {
     width: 100%;   
 }
 
-#intro:before {
+#intro > #introBG {
     position: absolute;
-    z-index: 1;
+    z-index: -1;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 3000px;
     content: "";
     background: url(../img/mainpic.jpg) center center no-repeat fixed;
     background-size: cover
 }
 
-#intro.scroll {
-    -webkit-animation: 100s scroll infinite linear;
-    animation: 100s scroll infinite linear;
+#intro.scroll > #introBG {
+    -webkit-animation: 10s scroll infinite linear;
+    animation: 10s scroll infinite linear;
     background-position: initial;
     background-repeat: repeat;
     background-size: initial
@@ -710,14 +712,20 @@ ul {
 }
 
 @-webkit-keyframes scroll {
+    0% {
+        transform: translate3D(0, 0, 0)
+    }
     100% {
-        transform: translate(0, -3000px)
+        transform: translate3D(0, -150vh, 0)
     }
 }
 
 @keyframes scroll {
+    0% {
+        transform: translate3D(0, 0, 0)
+    }
     100% {
-        transform: translate(0, -3000px)
+        transform: translate3D(0, -150vh, 0)
     }
 }
 

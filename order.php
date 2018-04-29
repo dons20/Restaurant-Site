@@ -104,7 +104,7 @@
 
         <!--Mask-->
         <div id="intro" class="view lazy">
-
+            <div id="introBG" class="lazy"></div>
             <div class="full-bg-img">
 
                 <div class="mask rgba-black-strong">

@@ -90,10 +90,11 @@ function showError(error, type) {
 }
 
 $(document).on('click', '.tabBtn', function() {
-    $intro.addClass('scroll').css('background-image', 'url("../img/' + $(this).text().toLowerCase() + '.jpg');
+    $intro.addClass('scroll');
+    $intro.find('#introBG').css({'background': 'url("../img/' + $(this).text().toLowerCase() + '.jpg") repeat', 'background-size': 'auto 150vh'});
 });
 
-$(document).on('click', 'a[href^="#"]', function(e) {
+$(document).on('click', 'a[href^="#"]:not("[role]")', function(e) {
     // target element id
     var id = $(this).attr('href');
     if (activeElement) {
