@@ -171,21 +171,11 @@
                 <div class="col-md-5 text-center">
 
                     <!--Excerpt-->
-                    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-                        placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis debitis
-                        aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
-                        id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et
-                        aut officiis debitis aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                        impedit quo minus id quod maxime
+                    <p>Testing
                     </p>
 
-                    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-                        placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis debitis
-                        aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
-                        id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et
-                        aut officiis debitis aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                        impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-                        repellendus et aut officiis debitis aut rerum.</p>
+                    <p>Test.
+		    </p>
 
                     <a class="btn btn-primary btn-md">Read more</a>
 
