@@ -173,7 +173,7 @@
                
          <a target="_blank" href="fpdf/menu.php"><p style="text-align:center">Download our menu (.pdf)</a>
         <br> <br>
-        <img src="img/coupon.png" height="500" width="500">
+        <img src="img/coupon.png" height="350" width="350">
         
                    
 
@@ -205,7 +205,7 @@
                 <div class="col-md-6 mb-4">
 		
  		
- 		<img src="img/AC.png" height="500" width="500">
+ 		<div style="text-align: center"><img src="img/AC.png" height="400" width="400" ></div>
 		
                 </div>
                 <!--Grid column-->
