@@ -31,7 +31,7 @@ header,
 }
 
 .top-nav-collapse {
-    background-color: #24355C;
+    background-color: #56d30a;
 }
 
 :root {
@@ -65,7 +65,7 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #212529;
+    color: #56d30a;
     text-align: left;
     background-color: #fff
 }
@@ -441,11 +441,11 @@ hr {
 }
 
 .deep-purple {
-    background-color: #673ab7!important
+    background-color: #56d30a!important
 }
 
 .deep-purple.accent-2 {
-    background-color: #7c4dff!important
+    background-color: #56d30a!important
 }
 
 .rgba-black-strong {
@@ -469,7 +469,7 @@ hr {
 }
 
 .unique-color-dark {
-    background-color: #1c2331!important
+    background-color: #56d30a!important
 }
 
 #toast-container>div,.badge,.btn,.btn.disabled:active,.btn.disabled:focus,.btn.disabled:hover,.btn:disabled:active,.btn:disabled:focus,.btn:disabled:hover,.card,.card-wrapper .back,.card-wrapper .front,.card.card-cascade.wider .card-body,.counter,.dropdown-content,.jumbotron,.md-pills .nav-link.active,.md-pills .show>.nav-link,.mdb-autocomplete-wrap,.media .media-left img,.modal-dialog.cascading-modal .modal-c-tabs .nav-tabs,.modal-dialog.modal-notify .modal-header,.navbar,.pagination .page-item.active .page-link,.pricing-card .price .version,.side-nav,.side-nav .logo-wrapper.sn-avatar-wrapper img,.z-depth-1 {
@@ -547,7 +547,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .navbar.navbar-dark .breadcrumb .nav-item .nav-link,.navbar.navbar-dark .navbar-nav .nav-item .nav-link {
-    color: #fff;
+    color: #65de0c;
     -webkit-transition: .35s;
     transition: .35s
 }
@@ -561,11 +561,11 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .navbar.navbar-dark .breadcrumb .nav-item.active>.nav-link:hover,.navbar.navbar-dark .navbar-nav .nav-item.active>.nav-link:hover {
-    color: #fff
+    color: #65de0c
 }
 
 .navbar.navbar-dark .navbar-toggler {
-    color: #fff
+    color: #65de0c
 }
 
 @media (min-width: 600px) {
