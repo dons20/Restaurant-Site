@@ -130,7 +130,7 @@
 
                                 <!-- Description -->
                                 <h4 class="white-text my-4">Experience A Mouth Filled with Extraordinary Sensation</h4>
-                                <a role="button" class="btn btn-outline-white" href="#aboutus">Read more
+                                <a class="btn btn-outline-white" href="#aboutus">Read more
                                     <i class="fas fa-book ml-2"></i>
                                 </a>
 
@@ -171,7 +171,7 @@
            
 
                
-         <a href="img/menu.pdf"><p style="text-align:center">Download our menu (.pdf)</a>
+         <a target="_blank" href="fpdf/menu.php"><p style="text-align:center">Download our menu (.pdf)</a>
         <br> <br>
         <img src="img/coupon.png" height="500" width="500">
         

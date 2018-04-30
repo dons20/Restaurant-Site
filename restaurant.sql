@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2018 at 05:07 AM
+-- Generation Time: Apr 30, 2018 at 11:40 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -35,6 +35,16 @@ CREATE TABLE `menu` (
   `availability` enum('Y','N') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `menu`
+--
+
+INSERT INTO `menu` (`ID`, `item_name`, `type`, `availability`) VALUES
+(1, 'eggs', 'breakfast', 'Y'),
+(2, 'chicken', 'lunch', 'Y'),
+(3, 'cake', 'dessert', 'Y'),
+(4, 'soda', 'beverage', 'Y');
+
 -- --------------------------------------------------------
 
 --
@@ -48,7 +58,7 @@ CREATE TABLE `users` (
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `registration_date` date NOT NULL,
-  `permissions` enum('A','E','C') NOT NULL
+  `permissions` enum('A','S','C') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -82,7 +92,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `users`
 --

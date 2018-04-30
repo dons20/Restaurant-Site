@@ -61,10 +61,10 @@ class myPDF extends FPDF
 		while($data = $stmt->fetch(PDO::FETCH_OBJ))
 			{
 					
-					$this->Cell(40, 10,$data->ID,1 ,0 ,'C');
-					$this->Cell(40, 10,$data->item_name,1 ,0 ,'C');
-					$this->Cell(40, 10,$data->type,1 ,0 ,'C');
-					$this->Cell(40, 10,$data->availability,1 ,0 ,'C');
+					$this->Cell(69, 10,$data->ID,1 ,0 ,'C');
+					$this->Cell(69, 10,$data->item_name,1 ,0 ,'C');
+					$this->Cell(69, 10,$data->type,1 ,0 ,'C');
+					$this->Cell(69, 10,$data->availability,1 ,0 ,'C');
 	   		
 					$this->Ln();	
 		}	
