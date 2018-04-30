@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -109,8 +110,8 @@
         <!--Mask-->
 
         <!--Mask-->
-        <div id="intro" class="view lazy">
-
+        <div id="intro" class="view">
+            <div id="introBG" class="lazy"></div>
             <div class="full-bg-img">
 
                 <div class="mask rgba-black-strong">
@@ -128,10 +129,10 @@
                                 <hr class="hr-light">
 
                                 <!-- Description -->
-                                <h4 class="white-text my-4">Experience A Mouth Filled with Extrodinary Sensation</h4>
-                                <button type="button" class="btn btn-outline-white">Read more
+                                <h4 class="white-text my-4">Experience A Mouth Filled with Extraordinary Sensation</h4>
+                                <a role="button" class="btn btn-outline-white" href="#aboutus">Read more
                                     <i class="fas fa-book ml-2"></i>
-                                </button>
+                                </a>
 
                             </div>
 
@@ -574,9 +575,10 @@
     <!-- User Scripts -->
     <script src="js/scripts.js"></script>
     <?php
-        session_start();
         if (isset($_SESSION["first_name"])) {
-            echo '<script> resumeSession("' . $_SESSION["first_name"] . '");</script>';
+            echo '<script>',
+                    "\r\t" . ' resumeSession("' . $_SESSION["first_name"] . '");' . "\r",
+                '</script>';
         }
     ?>
     <!-- Carousel options -->

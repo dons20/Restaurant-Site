@@ -2,7 +2,8 @@ var $rform =  $('#registrationForm form'),
     $lform =  $('#loginForm form'),
     $loginBtn = $('#loginBtn'),
     $signUpBtn = $('#signUpBtn'),
-    $logout = $('#logout');
+    $logout = $('#logout'),
+    $intro = $('#intro');
 
 var session, activeElement;
 $rform.on('submit', function(e) {
@@ -10,7 +11,7 @@ $rform.on('submit', function(e) {
     $.ajax({
         type:       "POST",
         cache:      false,
-        url:        '/php/registration.php',
+        url:        'php/registration.php',
         data:       $(this).serialize(),
         success:    function(response) {
             if(response) {
@@ -29,7 +30,7 @@ $lform.on('submit', function(e) {
     $.ajax({
         type:       "POST",
         cache:      false,
-        url:        '/php/login.php',
+        url:        'php/login.php',
         data:       $(this).serialize(),
         success:    function(response) {
             if (response) {
@@ -88,7 +89,80 @@ function showError(error, type) {
     }
 }
 
-$(document).on('click', 'a[href^="#"]', function(e) {
+function populateMenuForm() {
+    $.ajax({
+        type:       "POST",
+        cache:      false,
+        url:        'php/menu.php',
+        data:       $(this).serialize(),
+        success:    function(response) {
+            if(response) {
+                session = JSON.parse(response);
+                if (session.error) {
+                    showError(session.error, "menu");
+                } else {
+                    var item, type, container, isEmpty = [true, true, true, true];
+                    for (var i = 0; i < session.menuItems.length; i++) {
+                        item = session.menuItems[i].item_name;
+                        type = session.menuItems[i].type;
+                        switch(type) {
+                            case "breakfast":
+                                container = $('#menuPanelA');
+                                if (isEmpty[0]) { 
+                                    container.empty();
+                                    isEmpty[0] = false;
+                                }
+
+                                container.append(createButton(item));
+                                break;
+                            case "lunch":
+                                container = $('#menuPanelB');
+                                if (isEmpty[1]) { 
+                                    container.empty();
+                                    isEmpty[1] = false;
+                                }
+                                container.append(createButton(item));
+                                break;
+                            case "dessert":
+                                container = $('#menuPanelC');
+                                if (isEmpty[2]) { 
+                                    container.empty();
+                                    isEmpty[2] = false;
+                                }
+                                container.append(createButton(item));
+                                break;
+                            case "beverage":
+                                container = $('#menuPanelD');
+                                if (isEmpty[3]) { 
+                                    container.empty();
+                                    isEmpty[3] = false;
+                                }
+                                container.append(createButton(item));
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+function createButton(text) {
+    var btn = document.createElement("button");
+    btn.classList.add("btn", "btn-light-blue");
+    btn.setAttribute("type", "button");
+    btn.setAttribute("aria-pressed", "false");
+    btn.setAttribute("autocomplete", "off");
+    btn.innerText = text;
+    return btn;
+}
+
+$(document).on('click', '.tabBtn', function() {
+    $intro.addClass('scroll');
+    $intro.find('#introBG').css({'background': 'url("../img/' + $(this).text().toLowerCase() + '.jpg") repeat', 'background-size': 'auto 150vh'});
+});
+
+$(document).on('click', 'a[href^="#"]:not("[role]")', function(e) {
     // target element id
     var id = $(this).attr('href');
     if (activeElement) {
