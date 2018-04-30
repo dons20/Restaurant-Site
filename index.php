@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Resturant Website</title>
+    <title>Asia's Cafe</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
         crossorigin="anonymous">
@@ -47,6 +47,10 @@
                             <a class="nav-link" href="#intro" id="home">Home</a>
                         </li>
 
+                         <li class="nav-item">
+                            <a class="nav-link" href="#menu">Menu</a>
+                        </li>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#aboutus">About Us</a>
                         </li>
@@ -54,6 +58,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact Us</a>
                         </li>
+
+                       
                     </ul>
                     <!-- Links -->
 
@@ -148,6 +154,42 @@
 
     <!--Main layout-->
     <main class="mt-5">
+
+
+
+
+<hr class="my-5">
+
+
+             <!--Section: Menu-->
+        <section id="menu">
+
+            <!-- Heading -->
+            <h2 class="mb-5 font-weight-bold text-center">Menu</h2>
+
+            <!--Grid row-->
+           
+
+               
+         <a href="img/menu.pdf"><p style="text-align:center">Download our menu (.pdf)</a>
+        <br> <br>
+        <img src="img/coupon.png" height="500" width="500">
+        
+                   
+
+            </div>
+            <!--Grid row-->
+
+        </section>
+        <!--Section: About us-->
+
+
+
+
+
+
+
+
         <hr class="my-5">
 
         <!--Section: About us-->
@@ -161,7 +203,10 @@
 
                 <!--Grid column-->
                 <div class="col-md-6 mb-4">
-
+		
+ 		
+ 		<img src="img/AC.png" height="500" width="500">
+		
                 </div>
                 <!--Grid column-->
 
@@ -169,23 +214,18 @@
                 <div class="col-md-5 text-center">
 
                     <!--Excerpt-->
-                    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-                        placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis debitis
-                        aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
-                        id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et
-                        aut officiis debitis aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                        impedit quo minus id quod maxime
+                    <p style="text-align: left;">	At Asia's Cafe we believe in only the best! Prime cuts of meat, hand picked produce and customer service is our priority. 
+			  Our menu is typically that of a chicken house heavily influenced by the Jamaican tradition of indoor grilling.
+			  We also compliment our menu with a number of 'yard style' dishes so there's something for everyone.
+			  Enjoy our breathtaking ambiance in our elegantly casual dining atmosphere. 
+			  Our wait staff believes in the merit system of excellent service and is employed on the basis of tips earned.
+			  Therefore you, our valued customer will never have to pay a mandatory service charge.
                     </p>
 
-                    <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-                        placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis debitis
-                        aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus
-                        id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et
-                        aut officiis debitis aut rerum.Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-                        impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor
-                        repellendus et aut officiis debitis aut rerum.</p>
+                    <p><b>Thank you for choosing Asia's Cafe...!.</b>
+		    </p>
 
-                    <a class="btn btn-primary btn-md">Read more</a>
+                   
 
                 </div>
                 <!--Grid column-->
@@ -193,10 +233,18 @@
             </div>
             <!--Grid row-->
 
-        </section>
-        <!--Section: About us-->
 
         <hr class="my-5">
+
+
+
+
+
+
+
+
+
+
 
         <!--Section: Contact-->
         <section id="contact">
