@@ -169,7 +169,7 @@
 
                         </div>
                         
-                        <div class="position-absolute" style="margin-top: 22vh">
+                        <div class="position-absolute" style="margin-top: 25vmin">
                             <?php
                                 //If a staff member or admin then allow edit items
                                 if ($_SESSION['permissions'] == 'S' || $_SESSION['permissions'] == 'A') {
@@ -339,17 +339,25 @@
     <div id="crudForm" class="modal fade">
         <div class="modal-dialog modal-login cascading-modal">
             <div class="modal-content">
-                <div class="modal-header primary-color white-text">
+                <div class="modal-header green white-text">
                     <h4 class="title"><i class="fas fa-pen-square"></i> Menu Records</h4>	
                     <button id="loginClose" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
-                <div class="modal-body row">
+                <div class="modal-body">
+                    <div class="row font-weight-bold green-ic">
+                        <div class="col">ID</div>
+                        <div class="col">Item Name</div>
+                        <div class="col">Type</div>
+                        <div class="col">Availability</div>
+                    </div>
+                    <hr>
                     <!-- TODO: Populate with values from database 
                                 Consider using contenteditable for value modifications
+                                add listener to each element
                     -->
                 </div>
                 <div class="modal-footer">
-                    <p>CRUD Form</p>
+                    <button id="submitChanges" class="btn btn-danger" type="button">Submit Changes</button>
                 </div>
             </div>
         </div>
@@ -374,6 +382,9 @@
             echo '<script type="text/javascript">',
                     "\r\t" . '$("#uname").text("Welcome ' . $_SESSION["first_name"] . '!").addClass("yellow-text");' . "\r",
                 '</script>';
+        }
+        if ($_SESSION['permissions'] == 'S' || $_SESSION['permissions'] == 'A') {
+            echo '<script> populateCRUD(); </script>';
         }
     ?>
     <!-- Carousel options -->

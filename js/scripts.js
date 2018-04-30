@@ -94,15 +94,14 @@ function populateMenuForm() {
         type:       "POST",
         cache:      false,
         url:        'php/menu.php',
-        data:       $(this).serialize(),
         success:    function(response) {
             if(response) {
                 session = JSON.parse(response);
                 if (session.error) {
                     showError(session.error, "menu");
                 } else {
-                    var item, type, container, isEmpty = [true, true, true, true];
-                    for (var i = 0; i < session.menuItems.length; i++) {
+                    var item, type, container, length = session.menuItems.length, isEmpty = [true, true, true, true];
+                    for (var i = 0; i < length; i++) {
                         item = session.menuItems[i].item_name;
                         type = session.menuItems[i].type;
                         switch(type) {
@@ -139,6 +138,49 @@ function populateMenuForm() {
                                 }
                                 container.append(createButton(item));
                                 break;
+                        }
+                    }
+                }
+            }
+        }
+    });
+}
+
+function populateCRUD() {
+    $.ajax({
+        type:       "POST",
+        cache:      false,
+        url:        'php/items.php',
+        success:    function(response) {
+            if(response) {
+                session = JSON.parse(response);
+                if (session.error) {
+                    showError(session.error, "menu");
+                } else {
+                    var item, type, container, length = session.items.length, isEmpty = [true, true, true, true];
+                    container = $('#crudForm').find('.modal-body');
+                    for (var i = 0; i < length; i++) {
+                        var jLength = Object.keys(session.items[i]).length;
+                        var row = document.createElement("div");
+                        row.classList.add("row");
+                        container.append($(row));
+                        console.log(session.items[i]);
+                        for (var j = 0; j < jLength; j++) {
+                            var col = document.createElement("div");
+                            col.classList.add("col");
+                            col.setAttribute("contentEditable", "");
+
+                            if (j === 0) {
+                                col.innerText = session.items[i].id;
+                            } else if (j === 1) {
+                                col.innerText = session.items[i].item_name;
+                            } else if (j === 2) {
+                                col.innerText = session.items[i].type;
+                            } else if (j === 3) {
+                                col.innerText = session.items[i].availability;
+                            }
+                            
+                            $(row).append($(col));
                         }
                     }
                 }
