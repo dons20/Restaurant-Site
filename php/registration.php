@@ -108,8 +108,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $accessCode = trim($_POST['access_code']);
             if ($accessCode === "SUPERUSER") {
                 $permissions = 'A';
-            } else if ($accessCode === "EDITOR") {
-                $permissions = 'E';
+            } else if ($accessCode === "STAFF") {
+                $permissions = 'S';
             }
         }
     }

@@ -123,7 +123,7 @@
                                 <hr class="hr-light">
 
                                 <!-- Description -->
-                                <h4 class="white-text my-4">Experience A Mouth Filled with Extrodinary Sensation</h4>
+                                <h4 class="white-text my-4">Experience A Mouth Filled with Extraordinary Sensation</h4>
                                 <a role="button" class="btn btn-outline-white" href="#aboutus">Read more
                                     <i class="fas fa-book ml-2"></i>
                                 </a>

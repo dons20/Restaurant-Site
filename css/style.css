@@ -124,6 +124,10 @@ section .contact {
     box-sizing: border-box
 }
 
+button.btn.active {
+    border: 4px solid #ffeb3b;
+}
+
 .card {
     border: 0;
     font-weight: 400

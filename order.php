@@ -103,8 +103,8 @@
         <!--Mask-->
 
         <!--Mask-->
-        <div id="intro" class="view lazy">
-            <div id="introBG" class="lazy"></div>
+        <div id="intro" class="view">
+            <div id="introBG"></div>
             <div class="full-bg-img">
 
                 <div class="mask rgba-black-strong">
@@ -119,7 +119,7 @@
                                 <div class="tabs-wrapper">
                                     <ul class="nav classic-tabs tabs-cyan" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link waves-light tabBtn active" data-toggle="tab" href="#menuPanelA" role="tab">Breakfast</a>
+                                            <a class="nav-link waves-light tabBtn" data-toggle="tab" href="#menuPanelA" role="tab">Breakfast</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link waves-light tabBtn" data-toggle="tab" href="#menuPanelB" role="tab">Lunch</a>
@@ -135,43 +135,32 @@
 
                                 <!-- Tab panels -->
                                 <div id="tabcontent" class="tab-content card">
-
+                                    <div class="tab-pane fade in show active" role="tabpanel">
+                                        <p>
+                                            Choose a menu category to begin.
+                                        </p>
+                                    </div>
                                     <!--Panel 1-->
-                                    <div class="tab-pane fade in show active" id="menuPanelA" role="tabpanel">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima,
-                                            soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam,
-                                            pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-
+                                    <div class="tab-pane fade" id="menuPanelA" role="tabpanel">
+                                        <p>Whoops, there's nothing here today!</p>
                                     </div>
                                     <!--/.Panel 1-->
 
                                     <!--Panel 2-->
                                     <div class="tab-pane fade" id="menuPanelB" role="tabpanel">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima,
-                                            soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam,
-                                            pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima,
-                                            soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam,
-                                            pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-
+                                        <p>Whoops, there's nothing here today!</p>
                                     </div>
                                     <!--/.Panel 2-->
 
                                     <!--Panel 3-->
                                     <div class="tab-pane fade" id="menuPanelC" role="tabpanel">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima,
-                                            soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam,
-                                            pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-
+                                        <p>Whoops, there's nothing here today!</p>
                                     </div>
                                     <!--/.Panel 3-->
 
                                     <!--Panel 4-->
                                     <div class="tab-pane fade" id="menuPanelD" role="tabpanel">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil odit magnam minima,
-                                            soluta doloribus reiciendis molestiae placeat unde eos molestias. Quisquam aperiam,
-                                            pariatur. Tempora, placeat ratione porro voluptate odit minima.</p>
-
+                                        <p>Whoops, there's nothing here today!</p>
                                     </div>
                                     <!--/.Panel 4-->
 
@@ -179,9 +168,19 @@
                             </div>
 
                         </div>
+                        
+                        <div class="position-absolute" style="margin-top: 22vh">
+                            <?php
+                                //If a staff member or admin then allow edit items
+                                if ($_SESSION['permissions'] == 'S' || $_SESSION['permissions'] == 'A') {
+                                    echo '<button id="editButton" class="btn btn-danger" type="button" href="#crudForm" data-toggle="modal">Edit Items</button>';
+                                }
+                            ?>
+                            <button id="orderButton" class="btn btn-green" type="button" style="display: none;">Complete Order</button>
+                        </div>
 
                     </div>
-
+                    
                 </div>
 
             </div>
@@ -336,6 +335,26 @@
     </footer>
     <!--/.Footer-->
 
+    <!-- CRUD Form -->
+    <div id="crudForm" class="modal fade">
+        <div class="modal-dialog modal-login cascading-modal">
+            <div class="modal-content">
+                <div class="modal-header primary-color white-text">
+                    <h4 class="title"><i class="fas fa-pen-square"></i> Menu Records</h4>	
+                    <button id="loginClose" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body row">
+                    <!-- TODO: Populate with values from database 
+                                Consider using contenteditable for value modifications
+                    -->
+                </div>
+                <div class="modal-footer">
+                    <p>CRUD Form</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
@@ -361,6 +380,41 @@
     <script>
         var myLazyLoad = new LazyLoad({
             elements_selector: ".lazy"
+        });
+        var toggledElements = 0;
+        var $orderButton = $('#orderButton');
+
+        populateMenuForm();
+        $("#tabcontent").on('click', 'button', function() {
+            var btn = $(this);
+            btn.button('toggle');
+            
+            if (btn.hasClass('active')) {
+                toggledElements += 1;
+            } else {
+                toggledElements -= 1;
+            }
+
+            if (toggledElements === 1) {
+                $orderButton.show();
+            } else if (toggledElements === 0) {
+                $orderButton.hide();
+            }
+        });
+
+        $orderButton.on('click', function() {
+            var itemsOnList = [];
+            itemsOnList = $('#menuPanelA button.active, #menuPanelB button.active, #menuPanelC button.active, #menuPanelD button.active').button('toggle');
+            //Do this with ajax
+            $orderButton.text("Order Successful!");
+            $orderButton.addClass("disabled");
+            toggledElements = 0;
+            setTimeout(function() {
+                $orderButton.hide();
+                $orderButton.removeClass("disabled");
+                $orderButton.text("Complete Order");
+            }, 2000);
+            console.log(itemsOnList);
         });
     </script>
 </body>
