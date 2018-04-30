@@ -357,6 +357,7 @@
                     -->
                 </div>
                 <div class="modal-footer">
+                    <button id="newItem" class="btn btn-outline-green" type="button">New Item</button>
                     <button id="submitChanges" class="btn btn-danger" type="button">Submit Changes</button>
                 </div>
             </div>
@@ -393,7 +394,8 @@
             elements_selector: ".lazy"
         });
         var toggledElements = 0;
-        var $orderButton = $('#orderButton');
+        var $orderButton = $('#orderButton'),
+            $newItem = $('#newItem');
 
         populateMenuForm();
         $("#tabcontent").on('click', 'button', function() {
@@ -413,9 +415,34 @@
             }
         });
 
+        $newItem.on('click', function() {
+            var container = $('#crudForm').find('.modal-body');
+            var row = document.createElement("div");
+            row.classList.add("row");
+            container.append($(row));
+            for (var j = 0; j < 4; j++) {
+                var col = document.createElement("div");
+                col.classList.add("col");
+                col.setAttribute("contentEditable", "");
+
+                if (j === 0) {
+                    col.innerText = "ID";
+                } else if (j === 1) {
+                    col.innerText = "Item name";
+                } else if (j === 2) {
+                    col.innerText = "Type";
+                } else if (j === 3) {
+                    col.innerText = "'Y'/'N'";
+                }
+                
+                $(row).append($(col));
+            }
+        });
+
         $orderButton.on('click', function() {
             var itemsOnList = [];
-            itemsOnList = $('#menuPanelA button.active, #menuPanelB button.active, #menuPanelC button.active, #menuPanelD button.active').button('toggle');
+            itemsOnList = $('#menuPanelA button.active, #menuPanelB button.active, #menuPanelC button.active, #menuPanelD button.active');
+            itemsOnList.button('toggle');
             //Do this with ajax
             $orderButton.text("Order Successful!");
             $orderButton.addClass("disabled");
@@ -425,7 +452,7 @@
                 $orderButton.removeClass("disabled");
                 $orderButton.text("Complete Order");
             }, 2000);
-            console.log(itemsOnList);
+            alert("You ordered: " + itemsOnList.text());
         });
     </script>
 </body>

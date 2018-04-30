@@ -164,7 +164,6 @@ function populateCRUD() {
                         var row = document.createElement("div");
                         row.classList.add("row");
                         container.append($(row));
-                        console.log(session.items[i]);
                         for (var j = 0; j < jLength; j++) {
                             var col = document.createElement("div");
                             col.classList.add("col");
