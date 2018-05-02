@@ -82,11 +82,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 function welcome() {
     $returnVal = array("username" => $_SESSION["username"], "person" => $_SESSION["first_name"], "permissions" => $_SESSION["permissions"]);
     echo json_encode($returnVal);
-    
-    // If session variable is not set it will redirect to login page
-    if(!isset($_SESSION['username']) || empty($_SESSION['username'])){
-        header("location: ./");
-        exit;
-    }
 }
 ?>

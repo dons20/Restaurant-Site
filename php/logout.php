@@ -13,7 +13,7 @@
         
         session_destroy();
         session_write_close();
-        header("location: ../");
+        header("location: /../");
         die;
     }
 ?>
