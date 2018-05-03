@@ -19,9 +19,14 @@ $rform.on('submit', function(e) {
                 if (session.error) {
                     showError(session.error, "reg");
                 } else {
-                    finishRegister();
+                    finishRegister(session.location);
                 }
             }
+        },
+        error: function (response, textStatus, errorThrown) {
+            console.log("ERROR");
+            console.log("Status: " + textStatus);
+            console.log(response.responseText);
         }
     });
 });
@@ -41,6 +46,11 @@ $lform.on('submit', function(e) {
                     showError(session.error, "login");
                 }
             }
+        },
+        error: function (response, textStatus, errorThrown) {
+            console.log("ERROR");
+            console.log("Status: " + textStatus);
+            console.log(response.responseText);
         }
     });
 });
@@ -67,11 +77,12 @@ function resumeSession(name) {
     $('#uname').text("Welcome " + name + "!").addClass("yellow-text");
 }
 
-function finishRegister() {
+function finishRegister(location) {
     $signUpBtn.addClass("btn-success").removeClass("btn-primary").text("Successfully Registered!");
     setTimeout(function() {
         $signUpBtn.removeClass("btn-success").addClass("btn-primary").text("Login");
         $('#regClose').trigger('click');
+        document.location = location;
     }, 1250);
 }
 
@@ -93,7 +104,7 @@ function populateMenuForm() {
     $.ajax({
         type:       "POST",
         cache:      false,
-        url:        'php/menu.php',
+        url:        '/php/menu.php',
         success:    function(response) {
             if(response) {
                 session = JSON.parse(response);
@@ -150,7 +161,7 @@ function populateCRUD() {
     $.ajax({
         type:       "POST",
         cache:      false,
-        url:        'php/items.php',
+        url:        '/php/items.php',
         success:    function(response) {
             if(response) {
                 session = JSON.parse(response);
@@ -161,7 +172,8 @@ function populateCRUD() {
                     container = $('#crudForm').find('.modal-body');
                     for (var i = 0; i < length; i++) {
                         var jLength = Object.keys(session.items[i]).length;
-                        var row = document.createElement("div");
+                        var row = document.createElement("div"),
+                            close = document.createElement("button");
                         row.classList.add("row");
                         container.append($(row));
                         for (var j = 0; j < jLength; j++) {
@@ -181,11 +193,27 @@ function populateCRUD() {
                             
                             $(row).append($(col));
                         }
+                        close.classList.add("close", "position-absolute");
+                        close.setAttribute("type", "button");
+                        close.setAttribute("style", "right: 10%; color: green;");
+                        close.onclick = function () {
+                            this.parentNode.remove();
+                        };
+                        close.innerText = '×';
+                        $(row).append($(close));
                     }
+
+                    $('#submitChanges').on('click', function() {
+                        updateDatabase();
+                    });
                 }
             }
         }
     });
+}
+
+function updateDatabase() {
+
 }
 
 function createButton(text) {

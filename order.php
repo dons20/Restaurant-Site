@@ -1,4 +1,14 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+    //Check for user authentication otherwise redirect
+    if (!isset($_SESSION["first_name"])) {
+        echo "<script> 
+        alert('You need to be logged in to access this page!'); 
+        window.location.href = '../';
+        </script>";
+        header("Refresh:0; url=../");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,9 +24,9 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Material Design Bootstrap -->
-    <link href="css/mdb.min.css" rel="stylesheet">
+    <link href="/../css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="css/style.min.css" rel="stylesheet">
+    <link href="/../css/style.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -29,7 +39,7 @@
             <div class="container">
 
                 <!-- Navbar brand -->
-                <a class="navbar-brand" href="./">Asia's Cafe</a>
+                <a class="navbar-brand" href="/../">Asia's Cafe</a>
 
                 <!-- Collapse button -->
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
@@ -373,11 +383,11 @@
     <!-- Bootstrap core JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="../js/mdb.min.js"></script>
     <!-- Lazy Load Plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js"></script>
     <!-- User Scripts -->
-    <script src="js/scripts.js"></script>
+    <script src="../js/scripts.js"></script>
     <?php
         if (isset($_SESSION["first_name"])) {
             echo '<script type="text/javascript">',

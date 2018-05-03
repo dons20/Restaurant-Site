@@ -1,6 +1,7 @@
 <?php
 // Include config file
 require_once 'connection.php';
+header('Content: application/json', 1);
  
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = $first_name = $last_name = "";
@@ -139,7 +140,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
-                header("location: ./");
+                $returnVal = array("message" => "Successfully Registered!", "location" => "../");
+                echo json_encode($returnVal);
             } else{
                 $returnVal = array("error" => "Something went wrong. Please try again later.");
                 echo json_encode($returnVal);
