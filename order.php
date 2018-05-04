@@ -188,13 +188,9 @@
                             ?>
                             <button id="orderButton" class="btn btn-green" type="button" style="display: none;">Complete Order</button>
                         </div>
-
                     </div>
-                    
                 </div>
-
             </div>
-
         </div>
         <!--/.Mask-->
 
