@@ -45,6 +45,7 @@ class myPDF extends FPDF
 		$this->_enddoc();
 	}
 
+
 	function FancyTable($header, $data, $category)
 	{
 		//Set Category title
@@ -53,6 +54,7 @@ class myPDF extends FPDF
 		$this->SetLeftMargin(0);
 		$this->Cell(276,15, $category,0,0,'C');
 		$this->Ln();
+
 		// Colors, line width and bold font
 		$this->SetFillColor(38, 188, 30);
 		$this->SetTextColor(255);
@@ -71,6 +73,7 @@ class myPDF extends FPDF
 		$this->SetFont('');
 		// Data
 		$fill = false;
+
 		//Breakfast
 		foreach($data as $row)
 		{

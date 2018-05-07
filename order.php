@@ -8,6 +8,7 @@
         </script>";
         header("Refresh:0; url=../");
     }
+
     if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
     // last request was more than 30 minutes ago
         header("Refresh:0; url=/php/logout.php");

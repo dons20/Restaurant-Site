@@ -66,6 +66,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact Us</a>
                         </li>
+
                     </ul>
                     <!-- Links -->
 
@@ -267,6 +268,49 @@
 
                         <!--Grid column-->
 
+            <!--Section: Contact-->
+            <section id="contact">
+
+                <!-- Heading -->
+                <h2 class="mb-5 font-weight-bold text-center">Contact us</h2>
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-lg-5 col-md-12">
+
+                        <!-- Form contact -->
+                        <form class="p-5">
+                            <div class="md-form form-sm">
+                                <i class="fa fa-user prefix grey-text"></i>
+                                <input type="text" id="opt1" class="form-control form-control-sm" autocomplete='name'>
+                                <label for="opt1">Your name</label>
+                            </div>
+                            <div class="md-form form-sm">
+                                <i class="fa fa-envelope prefix grey-text"></i>
+                                <input type="text" id="opt2" class="form-control form-control-sm" autocomplete='email'>
+                                <label for="opt2">Your email</label>
+                            </div>
+                            <div class="md-form form-sm">
+                                <i class="fa fa-tag prefix grey-text"></i>
+                                <input type="text" id="opt3" class="form-control form-control-sm">
+                                <label for="opt3">Subject</label>
+                            </div>
+                            <div class="md-form form-sm">
+                                <i class="fa fa-pencil prefix grey-text"></i>
+                                <textarea type="text" id="opt4" class="md-textarea form-control form-control-sm" rows="4"></textarea>
+                                <label for="opt4">Your message</label>
+                            </div>
+                            <div class="text-center mt-4">
+                                <button class="btn btn-primary">Send
+                                    <i class="fa fa-paper-plane-o ml-1"></i>
+                                </button>
+                            </div>
+                        </form>
+                        <!-- Form contact -->
+
+                        <!--Grid column-->
 
                     </div>
                     <!--Grid column-->

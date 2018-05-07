@@ -199,6 +199,7 @@ function populateCRUD() {
                         close.setAttribute("type", "button");
                         close.setAttribute("style", "right: 3%; color: green;");
                         close.setAttribute("type", "submit");
+
                         close.onclick = function () {
                             this.parentNode.remove();
                         };
