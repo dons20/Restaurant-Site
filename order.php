@@ -8,6 +8,11 @@
         </script>";
         header("Refresh:0; url=../");
     }
+    if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+    // last request was more than 30 minutes ago
+        header("Refresh:0; url=/php/logout.php");
+    }
+    $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -343,7 +348,7 @@
 
     <!-- CRUD Form -->
     <div id="crudForm" class="modal fade">
-        <div class="modal-dialog modal-login cascading-modal">
+        <div class="modal-dialog modal-login cascading-modal modal-lg">
             <div class="modal-content">
                 <div class="modal-header green white-text">
                     <h4 class="title"><i class="fas fa-pen-square"></i> Menu Records</h4>	
@@ -354,13 +359,13 @@
                         <div class="col">ID</div>
                         <div class="col">Item Name</div>
                         <div class="col">Type</div>
+                        <div class="col">Price ($)</div>
                         <div class="col">Availability</div>
                     </div>
                     <hr>
-                    <!-- TODO: Populate with values from database 
-                                Consider using contenteditable for value modifications
-                                add listener to each element
-                    -->
+                    <form action="post">
+                        
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button id="newItem" class="btn btn-outline-green" type="button">New Item</button>

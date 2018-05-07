@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php 
+    session_start();
+    if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+    // last request was more than 30 minutes ago
+        header("Refresh:0; url=/php/logout.php");
+    }
+    $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,7 +49,6 @@
                 <!-- Collapsible content -->
                 <div class="collapse navbar-collapse" id="basicExampleNav">
 
-
                     <!-- Links -->
                     <ul class="navbar-nav mr-auto smooth-scroll">
                         <li class="nav-item">
@@ -59,8 +66,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact Us</a>
                         </li>
-
-
                     </ul>
                     <!-- Links -->
 
@@ -553,6 +558,10 @@
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Lazy Load Plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js"></script>
+    <script type="text/javascript" id="cookieinfo"
+	    src="//cookieinfoscript.com/js/cookieinfo.min.js">
+    </script>
+
     <!-- User Scripts -->
     <script src="js/scripts.js"></script>
     <?php

@@ -5,34 +5,16 @@ ob_start(); // it starts buffering
 
 require_once "fpdf/fpdf.php";
 require_once 'php/connection.php';
-//$db = new PDO('mysql:host=localhost;dbname=restaurant','root','');
 
 class myPDF extends FPDF
 {
-	function viewTable($db)
-	{
-		$this->SetFont('Times','',12);
-		$returnValue = array();
-		$stmt = $db->query('SELECT `item_name`, `type`, `price` FROM menu');
-		while($data = $stmt->fetch(PDO::FETCH_OBJ))
-			{
-				//$this->Cell(69, 10,$data->ID,1 ,0 ,'C');
-				/* $this->Cell(69, 10,$data->item_name,1 ,0 ,'C');
-				$this->Cell(69, 10,$data->type,1 ,0 ,'C');
-				$this->Cell(69, 10,$data->price,1 ,0 ,'C');
-				
-				$this->Ln();	 */
-				array_push($returnValue, [$data->item_name, $data->type, $data->price]);
-			}	
-		return $returnValue;
-	}
-
 	function header()
 	{
 		$date = date("d/m/Y");
 		$this->setTitle("Asia's Cafe - Order Menu");
 		$this->Image('img/AC2.png',10, 6);
 		$this->SetFont('Arial','B',40);
+		$this->SetTextColor(50);
 		$this->Cell(276,5, "Asia's Cafe",0,0,'C');
 		$this->Ln(10);
 		$this->SetFont('Times','',30);
@@ -63,20 +45,14 @@ class myPDF extends FPDF
 		$this->_enddoc();
 	}
 
-	function headerTable()
+	function FancyTable($header, $data, $category)
 	{
-		$this->SetFont('Times','B',12);
-		//$this->Cell(69, 10, 'ID Number',1 ,0 ,'C');
-		$this->MultiCell(0, 10, '<p style="text-align: center;>"Item Name</p>', 1,'C');
-		$this->SetX(11.5);
-		$this->Cell(0, 10, 'Item Type',1 ,0 ,'C');
-		$this->SetX(21.5);
-		$this->Cell(0, 10, 'Price',1 ,0 ,'C');
+		//Set Category title
+		$this->SetFont('Arial','B',20);
+		$this->SetTextColor(34);
+		$this->SetLeftMargin(0);
+		$this->Cell(276,15, $category,0,0,'C');
 		$this->Ln();
-	}
-
-	function FancyTable($header, $data)
-	{
 		// Colors, line width and bold font
 		$this->SetFillColor(38, 188, 30);
 		$this->SetTextColor(255);
@@ -84,8 +60,8 @@ class myPDF extends FPDF
 		$this->SetLineWidth(.5);
 		$this->SetFont('','B',16);
 		// Header
-		$w = array(50, 45, 50);
-		$this->SetLeftMargin(75);
+		$w = array(100, 100);
+		$this->SetLeftMargin(50);
 		for($i=0;$i<count($header);$i++)
 			$this->Cell($w[$i],7,$header[$i],1,0,'C',true);
 		$this->Ln();
@@ -95,32 +71,47 @@ class myPDF extends FPDF
 		$this->SetFont('');
 		// Data
 		$fill = false;
+		//Breakfast
 		foreach($data as $row)
 		{
-			$this->Cell($w[0],8,$row[0],'LR',0,'L',$fill);
-			$this->Cell($w[1],8,$row[1],'LR',0,'C',$fill);
-			$this->Cell($w[2],8,"$" . $row[2],'LR',0,'C',$fill);
-			//$this->Cell($w[3],6,number_format($row[3]),'LR',0,'R',$fill);
-			$this->Ln();
-			$fill = !$fill;
+			if (strtolower($row[1]) === strtolower($category)) {
+				$this->Cell($w[0],8,$row[0],'LR',0,'L',$fill);
+				$this->Cell($w[1],8,'$'.$row[2],'LR',0,'C',$fill);
+				$this->Ln();
+				$fill = !$fill;
+			}
 		}
+		
 		// Closing line
-		$this->Cell(array_sum($w),0,'','T');
-	}	
-	
+		$this->Cell(array_sum($w),5,'','T');
+		$this->SetLeftMargin(10);
+		$this->Ln();
+	}
+
+	function viewTable($db)
+	{
+		$this->SetFont('Times','',12);
+		$returnValue = array();
+		$stmt = $db->query('SELECT `item_name`, `type`, `price` FROM menu');
+		while($data = $stmt->fetch(PDO::FETCH_OBJ))
+			{
+				array_push($returnValue, [$data->item_name, $data->type, $data->price]);
+			}	
+		return $returnValue;
+	}
 }
 
 $pdf = new myPDF();
 $pdf->AliasNbPages();
 $pdf->AddPage('L','A4',0);
-$header = array('Current Offers', 'Type of Item', 'Price');
+$header = array('Items', 'Price');
 $data = $pdf->viewTable($pdo);
-$pdf->FancyTable($header, $data);
-//$pdf->viewTable($db);
+$category = array("Breakfast", "Lunch", "Dessert", "Beverage");
+for ($i = 0; $i < 4; $i++) { 
+	$pdf->FancyTable($header, $data, $category[$i]);
+}
 $pdf->Output();
 
-ob_end_flush(); // It's printed here, because ob_end_flush "prints" what's in
-              // the buffer, rather than returning it
-              //     (unlike the ob_get_* functions)
+ob_end_flush();
 
 ?>
