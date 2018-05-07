@@ -169,7 +169,7 @@ function populateCRUD() {
                     showError(session.error, "menu");
                 } else {
                     var item, type, container, length = session.items.length, isEmpty = [true, true, true, true];
-                    container = $('#crudForm').find('.modal-body');
+                    container = $('#crudForm').find('form');
                     for (var i = 0; i < length; i++) {
                         var jLength = Object.keys(session.items[i]).length;
                         var row = document.createElement("div"),
@@ -188,6 +188,8 @@ function populateCRUD() {
                             } else if (j === 2) {
                                 col.innerText = session.items[i].type;
                             } else if (j === 3) {
+                                col.innerText = session.items[i].price;
+                            } else if (j === 4) {
                                 col.innerText = session.items[i].availability;
                             }
                             
@@ -195,7 +197,9 @@ function populateCRUD() {
                         }
                         close.classList.add("close", "position-absolute");
                         close.setAttribute("type", "button");
-                        close.setAttribute("style", "right: 10%; color: green;");
+                        close.setAttribute("style", "right: 3%; color: green;");
+                        close.setAttribute("type", "submit");
+
                         close.onclick = function () {
                             this.parentNode.remove();
                         };

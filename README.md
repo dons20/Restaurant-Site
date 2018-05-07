@@ -6,6 +6,8 @@ This website is intended to serve as a live order form for registered users, giv
 
 This site is built with PHP in order to interact with a secure database of users and daily menu items.
 
+Note: Logged in users will be automatically logged out after 30 minutes of inactivity
+
 ## How to use
 
 Follow the steps below to get started.

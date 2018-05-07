@@ -25,8 +25,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     $id = $row['ID'];
                     $item_name = $row['item_name'];
                     $type = $row['type'];
+                    $price = $row['price'];
                     $availability = $row['availability'];
-                    array_push($items, ["id" => $id, "item_name" => $item_name, "type" => $type, "availability" => $availability]);
+                    array_push($items, ["id" => $id, "item_name" => $item_name, "type" => $type, "price" => $price, "availability" => $availability]);
                 }
                 $_SESSION['items'] = $items;
                 loadData();
