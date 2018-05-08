@@ -376,35 +376,36 @@
         </div>
     </div>
 
-    <div class="modal fade right modal-scrolling show" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="display: block; padding-right: 17px;">
-            <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-success" role="document">
-                <!--Content-->
-                <div class="modal-content">
-                    <!--Header-->
-                    <div class="modal-header">
-                        <p class="heading lead">Order Success!</p>
+    <!-- Order Modal -->
+    <div class="modal fade right modal-scrolling show" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="display: none; padding-right: 17px;">
+        <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-success" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header">
+                    <p class="heading lead">Order Success!</p>
 
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true" class="white-text">×</span>
-                        </button>
-                    </div>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="white-text">×</span>
+                    </button>
+                </div>
 
-                    <!--Body-->
-                    <div class="modal-body">
-                        <div class="text-center">
-                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
-                            <p>Your order was successfully placed, thank you!</p>
-                        </div>
-                    </div>
-
-                    <!--Footer-->
-                    <div class="modal-footer justify-content-center">
-                        <a type="button" class="btn btn-success waves-effect waves-light" data-dismiss="modal">Dismiss</a>
+                <!--Body-->
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                        <p>Your order was successfully placed, thank you!</p>
                     </div>
                 </div>
-                <!--/.Content-->
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+                    <a type="button" class="btn btn-success waves-effect waves-light" data-dismiss="modal">Dismiss</a>
+                </div>
             </div>
+            <!--/.Content-->
         </div>
+    </div>
 
 
     <!-- SCRIPTS -->
@@ -494,6 +495,7 @@
                 $orderButton.removeClass("disabled");
                 $orderButton.text("Complete Order");
             }, 2000);
+            $('#orderModal').show();
         });
     </script>
 </body>
