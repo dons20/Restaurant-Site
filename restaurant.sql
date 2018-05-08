@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2018 at 11:40 AM
+-- Generation Time: May 08, 2018 at 09:21 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -32,18 +32,19 @@ CREATE TABLE `menu` (
   `ID` int(11) NOT NULL,
   `item_name` varchar(256) NOT NULL,
   `type` enum('breakfast','lunch','beverage','dessert') NOT NULL,
-  `availability` enum('Y','N') NOT NULL
+  `availability` enum('Y','N') NOT NULL,
+  `price` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `menu`
 --
 
-INSERT INTO `menu` (`ID`, `item_name`, `type`, `availability`) VALUES
-(1, 'eggs', 'breakfast', 'Y'),
-(2, 'chicken', 'lunch', 'Y'),
-(3, 'cake', 'dessert', 'Y'),
-(4, 'soda', 'beverage', 'Y');
+INSERT INTO `menu` (`ID`, `item_name`, `type`, `availability`, `price`) VALUES
+(1, 'Boiled Eggs', 'breakfast', 'Y', 200),
+(2, 'Fried Chicken', 'lunch', 'Y', 500),
+(3, 'Ice Cream', 'dessert', 'Y', 150),
+(4, 'D&G Soda', 'beverage', 'Y', 100);
 
 -- --------------------------------------------------------
 
@@ -66,7 +67,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `username`, `password`, `first_name`, `last_name`, `registration_date`, `permissions`) VALUES
-(3, 'Tester', '$2y$10$9gmSsVjjypOtMDOfgEt73OU9.tHivelh4kGaMTQG/D2cOT0jpOtEW', 'Keno', 'Clayton', '2018-04-23', 'A');
+(1, 'Tester', '$2y$10$HlnVnXdUxLErVo1Qk6TWzuVgSa1WNaZOgrNJITd/VBMJwFoJZGe0y', 'Keno', 'Clayton', '2018-05-01', 'C'),
+(2, 'AdminTester', '$2y$10$1/r5Y77nR0kIFlSFLsgVoODM4h9SQMcxmsEda33nATwnJx2W.47QW', 'Keno', 'Clayton', '2018-05-01', 'A');
 
 --
 -- Indexes for dumped tables
@@ -97,7 +99,7 @@ ALTER TABLE `menu`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
