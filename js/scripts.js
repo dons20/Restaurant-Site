@@ -179,17 +179,25 @@ function populateCRUD() {
                         for (var j = 0; j < jLength; j++) {
                             var col = document.createElement("div");
                             col.classList.add("col");
-                            col.setAttribute("contentEditable", "");
 
                             if (j === 0) {
+                                var input = document.createElement("input");
+                                var label = document.createElement("label");
+                                input.classList.add("disabled");
+                                input.setAttribute("type", "text");
+                                label.classList.add("disabled");
                                 col.innerText = session.items[i].id;
                             } else if (j === 1) {
+                                var input = document.createElement("input");
                                 col.innerText = session.items[i].item_name;
                             } else if (j === 2) {
+                                var input = document.createElement("input");
                                 col.innerText = session.items[i].type;
                             } else if (j === 3) {
+                                var input = document.createElement("input");
                                 col.innerText = session.items[i].price;
                             } else if (j === 4) {
+                                var input = document.createElement("input");
                                 col.innerText = session.items[i].availability;
                             }
                             
@@ -217,7 +225,7 @@ function populateCRUD() {
 }
 
 function updateDatabase() {
-
+    
 }
 
 function createButton(text) {

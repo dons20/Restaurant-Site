@@ -192,7 +192,7 @@
                                     echo '<button id="editButton" class="btn btn-danger" type="button" href="#crudForm" data-toggle="modal">Edit Items</button>';
                                 }
                             ?>
-                            <button id="orderButton" class="btn btn-green" type="button" style="display: none;">Complete Order</button>
+                            <button id="orderButton" class="btn btn-green" type="button" style="display: none;" data-toggle="modal" data-target="#orderModal" data-backdrop="false">Complete Order</button>
                         </div>
                     </div>
                 </div>
@@ -376,6 +376,36 @@
         </div>
     </div>
 
+    <div class="modal fade right modal-scrolling show" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" style="display: block; padding-right: 17px;">
+            <div class="modal-dialog modal-side modal-bottom-right modal-notify modal-success" role="document">
+                <!--Content-->
+                <div class="modal-content">
+                    <!--Header-->
+                    <div class="modal-header">
+                        <p class="heading lead">Order Success!</p>
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">×</span>
+                        </button>
+                    </div>
+
+                    <!--Body-->
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
+                            <p>Your order was successfully placed, thank you!</p>
+                        </div>
+                    </div>
+
+                    <!--Footer-->
+                    <div class="modal-footer justify-content-center">
+                        <a type="button" class="btn btn-success waves-effect waves-light" data-dismiss="modal">Dismiss</a>
+                    </div>
+                </div>
+                <!--/.Content-->
+            </div>
+        </div>
+
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
@@ -464,7 +494,6 @@
                 $orderButton.removeClass("disabled");
                 $orderButton.text("Complete Order");
             }, 2000);
-            alert("You ordered: " + itemsOnList.text());
         });
     </script>
 </body>
