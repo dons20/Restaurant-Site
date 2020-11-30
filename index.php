@@ -1,10 +1,10 @@
-<?php 
-    session_start();
-    if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+<?php
+session_start();
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
     // last request was more than 30 minutes ago
-        header("Refresh:0; url=/php/logout.php");
-    }
-    $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
+    header("Refresh:0; url=/php/logout.php");
+}
+$_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
 
 ?>
 <!DOCTYPE html>
@@ -16,12 +16,10 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Asia's Cafe</title>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
     <!-- Your custom styles (optional) -->
@@ -41,8 +39,7 @@
                 <a class="navbar-brand" href="./">Asia's Cafe</a>
 
                 <!-- Collapse button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -157,13 +154,14 @@
             <div class="row">
                 <div class="col-lg-6">
                     <!-- Heading -->
-        
+
                     <!--Grid row-->
-                        <object id="pdfPreview" data="todays-menu" type="application/pdf" width="500" height="350">
-                            &nbsp;
-                        </object>
-                        <a target="_blank" href="todays-menu">
-                        <p style="text-align:center">View and download today's menu (.pdf)</p></a>
+                    <object id="pdfPreview" data="todays-menu" type="application/pdf" width="500" height="350">
+                        &nbsp;
+                    </object>
+                    <a target="_blank" href="todays-menu">
+                        <p style="text-align:center">View and download today's menu (.pdf)</p>
+                    </a>
                 </div>
                 <br>
                 <br>
@@ -268,106 +266,105 @@
 
                         <!--Grid column-->
 
-            <!--Section: Contact-->
-            <section id="contact">
+                        <!--Section: Contact-->
+                        <section id="contact">
 
-                <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold text-center">Contact us</h2>
+                            <!-- Heading -->
+                            <h2 class="mb-5 font-weight-bold text-center">Contact us</h2>
 
-                <!--Grid row-->
-                <div class="row">
+                            <!--Grid row-->
+                            <div class="row">
 
-                    <!--Grid column-->
-                    <div class="col-lg-5 col-md-12">
+                                <!--Grid column-->
+                                <div class="col-lg-5 col-md-12">
 
-                        <!-- Form contact -->
-                        <form class="p-5">
-                            <div class="md-form form-sm">
-                                <i class="fa fa-user prefix grey-text"></i>
-                                <input type="text" id="opt1" class="form-control form-control-sm" autocomplete='name'>
-                                <label for="opt1">Your name</label>
+                                    <!-- Form contact -->
+                                    <form class="p-5">
+                                        <div class="md-form form-sm">
+                                            <i class="fa fa-user prefix grey-text"></i>
+                                            <input type="text" id="opt1" class="form-control form-control-sm" autocomplete='name'>
+                                            <label for="opt1">Your name</label>
+                                        </div>
+                                        <div class="md-form form-sm">
+                                            <i class="fa fa-envelope prefix grey-text"></i>
+                                            <input type="text" id="opt2" class="form-control form-control-sm" autocomplete='email'>
+                                            <label for="opt2">Your email</label>
+                                        </div>
+                                        <div class="md-form form-sm">
+                                            <i class="fa fa-tag prefix grey-text"></i>
+                                            <input type="text" id="opt3" class="form-control form-control-sm">
+                                            <label for="opt3">Subject</label>
+                                        </div>
+                                        <div class="md-form form-sm">
+                                            <i class="fa fa-pencil prefix grey-text"></i>
+                                            <textarea type="text" id="opt4" class="md-textarea form-control form-control-sm" rows="4"></textarea>
+                                            <label for="opt4">Your message</label>
+                                        </div>
+                                        <div class="text-center mt-4">
+                                            <button class="btn btn-primary">Send
+                                                <i class="fa fa-paper-plane-o ml-1"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <!-- Form contact -->
+
+                                    <!--Grid column-->
+
+                                </div>
+                                <!--Grid column-->
+
+                                <!--Grid column-->
+                                <div class="col-lg-6 col-md-12">
+
+
+                                    <!--Grid row-->
+                                    <div class="row text-center">
+
+                                        <!--Grid column-->
+                                        <div class="col-lg-4 col-md-12 mb-3">
+
+                                            <p>
+                                                <i class="fa fa-map fa-1x mr-2 grey-text"></i>Vocational Training Development Institute, JM 10012</p>
+
+                                        </div>
+                                        <!--Grid column-->
+
+                                        <!--Grid column-->
+                                        <div class="col-lg-4 col-md-6 mb-3">
+
+                                            <p>
+                                                <i class="fa fa-building fa-1x mr-2 grey-text"></i>Mon - Fri, 8:00-5:00</p>
+
+                                        </div>
+                                        <!--Grid column-->
+
+                                        <!--Grid column-->
+                                        <div class="col-lg-4 col-md-6 mb-3">
+
+                                            <p>
+                                                <i class="fa fa-phone fa-1x mr-2 grey-text"></i>+ 1(876)975-6658</p>
+
+                                        </div>
+                                        <!--Grid column-->
+
+                                    </div>
+                                    <!--Grid row-->
+
+
+
+                                    <!--Google map-->
+                                    <div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 400px">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.0246893851568!2d-76.74061778511465!3d18.02405778769993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edb3ed230a1d1f9%3A0xd05acd895429b661!2sVocational+Training+Development+Institute!5e0!3m2!1sen!2sjm!4v1524114289221" width="745" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                    </div>
+
+                                </div>
+                                <!--Grid column-->
+
                             </div>
-                            <div class="md-form form-sm">
-                                <i class="fa fa-envelope prefix grey-text"></i>
-                                <input type="text" id="opt2" class="form-control form-control-sm" autocomplete='email'>
-                                <label for="opt2">Your email</label>
-                            </div>
-                            <div class="md-form form-sm">
-                                <i class="fa fa-tag prefix grey-text"></i>
-                                <input type="text" id="opt3" class="form-control form-control-sm">
-                                <label for="opt3">Subject</label>
-                            </div>
-                            <div class="md-form form-sm">
-                                <i class="fa fa-pencil prefix grey-text"></i>
-                                <textarea type="text" id="opt4" class="md-textarea form-control form-control-sm" rows="4"></textarea>
-                                <label for="opt4">Your message</label>
-                            </div>
-                            <div class="text-center mt-4">
-                                <button class="btn btn-primary">Send
-                                    <i class="fa fa-paper-plane-o ml-1"></i>
-                                </button>
-                            </div>
-                        </form>
-                        <!-- Form contact -->
+                            <!--Grid row-->
 
-                        <!--Grid column-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-6 col-md-12">
-
-
-                        <!--Grid row-->
-                        <div class="row text-center">
-
-                            <!--Grid column-->
-                            <div class="col-lg-4 col-md-12 mb-3">
-
-                                <p>
-                                    <i class="fa fa-map fa-1x mr-2 grey-text"></i>Vocational Training Development Institute, JM 10012</p>
-
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class="col-lg-4 col-md-6 mb-3">
-
-                                <p>
-                                    <i class="fa fa-building fa-1x mr-2 grey-text"></i>Mon - Fri, 8:00-5:00</p>
-
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class="col-lg-4 col-md-6 mb-3">
-
-                                <p>
-                                    <i class="fa fa-phone fa-1x mr-2 grey-text"></i>+ 1(876)975-6658</p>
-
-                            </div>
-                            <!--Grid column-->
-
-                        </div>
-                        <!--Grid row-->
-
-
-
-                        <!--Google map-->
-                        <div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 400px">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3794.0246893851568!2d-76.74061778511465!3d18.02405778769993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8edb3ed230a1d1f9%3A0xd05acd895429b661!2sVocational+Training+Development+Institute!5e0!3m2!1sen!2sjm!4v1524114289221"
-                                width="745" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-                        </div>
-
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-            </section>
-            <!--Section: Contact-->
+                        </section>
+                        <!--Section: Contact-->
 
     </main>
     <!--Main layout-->
@@ -590,38 +587,34 @@
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!-- Bootstrap tooltips -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <!-- Bootstrap core JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Lazy Load Plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-lazyload/10.5.2/lazyload.min.js"></script>
-    <script type="text/javascript" id="cookieinfo"
-	    src="//cookieinfoscript.com/js/cookieinfo.min.js">
+    <script type="text/javascript" id="cookieinfo" src="//cookieinfoscript.com/js/cookieinfo.min.js">
     </script>
 
     <!-- User Scripts -->
     <script src="js/scripts.js"></script>
     <?php
-        if (isset($_SESSION["first_name"])) {
-            echo '<script>',
-                    "\r\t" . ' resumeSession("' . $_SESSION["first_name"] . '");' . "\r",
-                '</script>';
-        }
+    if (isset($_SESSION["first_name"])) {
+        echo '<script>',
+            "\r\t" . ' resumeSession("' . $_SESSION["first_name"] . '");' . "\r",
+            '</script>';
+    }
     ?>
-        <!-- Carousel options -->
-        <script>
-            document.getElementById('home').click();
-            var myLazyLoad = new LazyLoad({
-                elements_selector: ".lazy"
-            });
-        </script>
+    <!-- Carousel options -->
+    <script>
+        document.getElementById('home').click();
+        var myLazyLoad = new LazyLoad({
+            elements_selector: ".lazy"
+        });
+    </script>
 </body>
 
 </html>

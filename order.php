@@ -1,19 +1,19 @@
-<?php 
-    session_start(); 
-    //Check for user authentication otherwise redirect
-    if (!isset($_SESSION["first_name"])) {
-        echo "<script> 
+<?php
+session_start();
+//Check for user authentication otherwise redirect
+if (!isset($_SESSION["first_name"])) {
+    echo "<script> 
         alert('You need to be logged in to access this page!'); 
         window.location.href = '../';
         </script>";
-        header("Refresh:0; url=../");
-    }
+    header("Refresh:0; url=../");
+}
 
-    if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
     // last request was more than 30 minutes ago
-        header("Refresh:0; url=/php/logout.php");
-    }
-    $_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
+    header("Refresh:0; url=/php/logout.php");
+}
+$_SESSION['LAST_ACTIVITY'] = time(); // update last activity time stamp
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,8 +24,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Resturant Website</title>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -48,8 +47,7 @@
                 <a class="navbar-brand" href="/../">Asia's Cafe</a>
 
                 <!-- Collapse button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -59,7 +57,7 @@
                     <!-- Links -->
                     <ul class="navbar-nav mr-auto smooth-scroll">
                         <li class="nav-item">
-                            <a class="nav-link" href="./">Home</a>
+                            <a class="nav-link" href="/">Home</a>
                         </li>
 
                         <li class="nav-item">
@@ -184,13 +182,13 @@
                             </div>
 
                         </div>
-                        
+
                         <div class="position-absolute" style="margin-top: 25vmin">
                             <?php
-                                //If a staff member or admin then allow edit items
-                                if ($_SESSION['permissions'] == 'S' || $_SESSION['permissions'] == 'A') {
-                                    echo '<button id="editButton" class="btn btn-danger" type="button" href="#crudForm" data-toggle="modal">Edit Items</button>';
-                                }
+                            //If a staff member or admin then allow edit items
+                            if ($_SESSION['permissions'] == 'S' || $_SESSION['permissions'] == 'A') {
+                                echo '<button id="editButton" class="btn btn-danger" type="button" href="#crudForm" data-toggle="modal">Edit Items</button>';
+                            }
                             ?>
                             <button id="orderButton" class="btn btn-green" type="button" style="display: none;" data-toggle="modal" data-target="#orderModal" data-backdrop="false">Complete Order</button>
                         </div>
@@ -352,7 +350,7 @@
         <div class="modal-dialog modal-login cascading-modal modal-lg">
             <div class="modal-content">
                 <div class="modal-header green white-text">
-                    <h4 class="title"><i class="fas fa-pen-square"></i> Menu Records</h4>	
+                    <h4 class="title"><i class="fas fa-pen-square"></i> Menu Records</h4>
                     <button id="loginClose" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -365,7 +363,7 @@
                     </div>
                     <hr>
                     <form action="post">
-                        
+
                     </form>
                 </div>
                 <div class="modal-footer">
@@ -422,14 +420,14 @@
     <!-- User Scripts -->
     <script src="../js/scripts.js"></script>
     <?php
-        if (isset($_SESSION["first_name"])) {
-            echo '<script type="text/javascript">',
-                    "\r\t" . '$("#uname").text("Welcome ' . $_SESSION["first_name"] . '!").addClass("yellow-text");' . "\r",
-                '</script>';
-        }
-        if ($_SESSION['permissions'] == 'S' || $_SESSION['permissions'] == 'A') {
-            echo '<script> populateCRUD(); </script>';
-        }
+    if (isset($_SESSION["first_name"])) {
+        echo '<script type="text/javascript">',
+            "\r\t" . '$("#uname").text("Welcome ' . $_SESSION["first_name"] . '!").addClass("yellow-text");' . "\r",
+            '</script>';
+    }
+    if ($_SESSION['permissions'] == 'S' || $_SESSION['permissions'] == 'A') {
+        echo '<script> populateCRUD(); </script>';
+    }
     ?>
     <!-- Carousel options -->
     <script>
@@ -444,7 +442,7 @@
         $("#tabcontent").on('click', 'button', function() {
             var btn = $(this);
             btn.button('toggle');
-            
+
             if (btn.hasClass('active')) {
                 toggledElements += 1;
             } else {
@@ -477,7 +475,7 @@
                 } else if (j === 3) {
                     col.innerText = "'Y'/'N'";
                 }
-                
+
                 $(row).append($(col));
             }
         });
